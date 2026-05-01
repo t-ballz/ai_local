@@ -33,14 +33,13 @@ nav:
   - Home: index.md
   - Hardware: hardware/index.md
   - Models: models/index.md
-  - Inference: inference/index.md
+  - Inference:
+    - Overview: inference/index.md
+    - Ollama: inference/ollama.md
+    - llama.cpp: inference/llama-cpp.md
+    - LM Studio: inference/lm-studio.md
   - Tools:
     - Overview: tools/index.md
-    - Backends:
-      - Overview: tools/backends/index.md
-      - Ollama: tools/backends/ollama.md
-      - llama.cpp: tools/backends/llama-cpp.md
-      - LM Studio: tools/backends/lm-studio.md
     - UI Tools:
       - Overview: tools/ui/index.md
       - Open WebUI: tools/ui/openwebui.md
