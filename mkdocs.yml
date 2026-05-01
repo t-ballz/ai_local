@@ -1,0 +1,37 @@
+site_name: AI Local — Personal Knowledge Base
+site_description: Notes on running AI locally
+docs_dir: docs
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: cyan
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Hardware: hardware/index.md
+  - Models: models/index.md
+  - Inference: inference/index.md
+  - Tools: tools/index.md
