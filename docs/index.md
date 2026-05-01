@@ -1,6 +1,6 @@
 # AI Local
 
-Personal knowledge base for running AI models locally.
+Personal knowledge base for running AI models locally. Test.
 
 ## Quick start
 

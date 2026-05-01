@@ -34,4 +34,6 @@ nav:
   - Hardware: hardware/index.md
   - Models: models/index.md
   - Inference: inference/index.md
-  - Tools: tools/index.md
+  - Tools:
+    - Overview: tools/index.md
+    - Claude Code Alternatives: tools/claude-code-alternatives.md
