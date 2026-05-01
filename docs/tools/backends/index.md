@@ -1,5 +1,10 @@
 # Backends
 
-Notes on model inference backends — engines that serve models locally.
+Inference engines and local AI platforms.
 
-Examples: llama.cpp, Ollama, vLLM, LM Studio server, llama-server.
+| Tool | Type | Install | API port |
+|------|------|---------|----------|
+| [Ollama](ollama.md) | Inference server | `curl … \| sh` | 11434 |
+| [llama.cpp](llama-cpp.md) | Inference engine | brew / build | 8080 |
+| [LM Studio](lm-studio.md) | Desktop app + server | `curl … \| bash` | 1234 |
+| [AnythingLLM](anythingllm.md) | UI + RAG platform | Docker / desktop | 3001 |
