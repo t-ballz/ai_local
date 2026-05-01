@@ -32,7 +32,12 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Hardware: hardware/index.md
-  - Models: models/index.md
+  - Models:
+    - Overview: models/index.md
+    - Llama: models/llama.md
+    - Qwen: models/qwen.md
+    - DeepSeek: models/deepseek.md
+    - Gemma: models/gemma.md
   - Inference:
     - Overview: inference/index.md
     - Ollama: inference/ollama.md
