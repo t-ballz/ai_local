@@ -41,8 +41,10 @@ nav:
       - Ollama: tools/backends/ollama.md
       - llama.cpp: tools/backends/llama-cpp.md
       - LM Studio: tools/backends/lm-studio.md
-      - AnythingLLM: tools/backends/anythingllm.md
-    - UI Tools: tools/ui/index.md
+    - UI Tools:
+      - Overview: tools/ui/index.md
+      - Open WebUI: tools/ui/openwebui.md
+      - AnythingLLM: tools/ui/anythingllm.md
     - CLI Tools:
       - Overview: tools/cli/index.md
       - Claude Code Alternatives: tools/cli/claude-code-alternatives.md

@@ -1,5 +1,8 @@
 # UI Tools
 
-Notes on graphical interfaces for interacting with local models.
+Web and desktop interfaces for interacting with local models.
 
-Examples: Open WebUI, LM Studio, Msty, Hollama.
+| Tool | Type | Port |
+|------|------|------|
+| [Open WebUI](openwebui.md) | Web UI (Docker / pip) | 3000 |
+| [AnythingLLM](anythingllm.md) | Web UI + RAG platform (Docker / desktop) | 3001 |
