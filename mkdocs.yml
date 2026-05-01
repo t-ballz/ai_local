@@ -36,4 +36,8 @@ nav:
   - Inference: inference/index.md
   - Tools:
     - Overview: tools/index.md
-    - Claude Code Alternatives: tools/claude-code-alternatives.md
+    - Backends: tools/backends/index.md
+    - UI Tools: tools/ui/index.md
+    - CLI Tools:
+      - Overview: tools/cli/index.md
+      - Claude Code Alternatives: tools/cli/claude-code-alternatives.md
