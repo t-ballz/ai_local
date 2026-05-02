@@ -44,6 +44,21 @@ One commit per task — never batch. Task files are never deleted; `tasks/` is t
 | Inference runtime | `docs/inference/<runtime>.md` |
 | Tools / UIs | `docs/tools/<tool>.md` |
 
+## Accuracy and honesty
+
+**Never invent facts.** If a CLI flag, env var, URL, or version number is uncertain, say so and ask rather than guessing. Not knowing something is not an error; hiding the uncertainty is.
+
+**When something is an approximation**, say so explicitly in the doc. Example patterns:
+- Table captions: *"Sizes are Q4_K_M estimates — actual files vary by ±10–15%."*
+- Inline notes: `~19 GB (approximate)` or `~19 GB¹` with a footnote.
+- Admonition: `!!! note "Approximate values"` before a table built from estimates.
+
+**When to ask instead of guess:**
+- Exact CLI flag names or syntax (flags get renamed/added between releases).
+- Exact env var names for third-party tools.
+- Version numbers that may have changed since training cutoff.
+- Any claim that would be wrong-and-harmful rather than just imprecise.
+
 ## Markdown conventions
 
 - Use MkDocs Material admonitions (`!!! note`, `!!! tip`, `!!! warning`) for callouts.

@@ -43,8 +43,8 @@ lms import /path/to/model.gguf  # import an external GGUF file
 Load options:
 
 ```bash
-lms load qwen3-4b --gpu=max              # full GPU offload
-lms load qwen3-4b --gpu=0.5             # 50% GPU offload
+lms load qwen3-4b --gpu max              # full GPU offload
+lms load qwen3-4b --gpu 0.5            # 50% GPU offload
 lms load qwen3-4b --context-length=8192
 lms load qwen3-4b --identifier="mymodel"  # custom API name
 ```
@@ -72,10 +72,11 @@ This is the recommended mode for Linux servers and CI environments.
 
 ### LAN / network hosting
 
-LM Studio's server binds to `localhost:1234` by default. To expose it on the local network, set the host in the app's **Server** settings pane (Local Server → address dropdown → `0.0.0.0`), or configure the port via `lms server start --port 1234` then set the address from settings.
+LM Studio's server binds to `localhost:1234` by default. To expose it on the local network:
 
-!!! note
-    As of LM Studio 0.4.x, `--host` is not a direct CLI flag for `lms server start`. Use the app settings or the `LMSTUDIO_HOST` environment variable for network binding.
+```bash
+lms server start --bind 0.0.0.0 --port 1234
+```
 
 ---
 
