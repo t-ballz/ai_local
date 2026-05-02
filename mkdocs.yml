@@ -34,6 +34,7 @@ nav:
   - Hardware:
     - Overview: hardware/index.md
     - Ryzen 7 9700X + RTX 5060: hardware/ryzen7-9700x-rtx5060.md
+    - i5-4570 + GTX 1050 Ti: hardware/i5-4570-1050ti.md
   - Models:
     - Overview: models/index.md
     - Llama: models/llama.md
