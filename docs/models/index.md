@@ -9,6 +9,7 @@ Overview of the major open-weight model families for local inference.
 | [DeepSeek](deepseek.md) | DeepSeek AI | MIT (distills) | R1 reasoning distills, efficient MoE |
 | [Gemma](gemma.md) | Google DeepMind | Apache 2.0 | Multimodal, strong coding (Gemma 4 31B) |
 | [Mistral](mistral.md) | Mistral AI | Apache 2.0 | Multilingual + vision; Small 3.1 fits 16 GB VRAM |
+| [SmolLM3](smollm.md) | HuggingFace | Apache 2.0 | 3B, 128K ctx, dual-mode reasoning; 1.92 GB Q4_K_M |
 
 ## Quick size guide
 
