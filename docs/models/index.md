@@ -5,9 +5,10 @@ Overview of the major open-weight model families for local inference.
 | Family | Org | Licence | Best known for |
 |--------|-----|---------|---------------|
 | [Llama](llama.md) | Meta | Meta Llama Licence | Broad ecosystem, Llama 4 MoE + multimodal |
-| [Qwen](qwen.md) | Alibaba | Apache 2.0 | Hybrid thinking mode, strong coding/math |
+| [Qwen](qwen.md) | Alibaba | Apache 2.0 | Hybrid thinking mode, strong coding/math; Qwen3.5 adds vision |
 | [DeepSeek](deepseek.md) | DeepSeek AI | MIT (distills) | R1 reasoning distills, efficient MoE |
 | [Gemma](gemma.md) | Google DeepMind | Apache 2.0 | Multimodal, strong coding (Gemma 4 31B) |
+| [Mistral](mistral.md) | Mistral AI | Apache 2.0 | Multilingual + vision; Small 3.1 fits 16 GB VRAM |
 
 ## Quick size guide
 

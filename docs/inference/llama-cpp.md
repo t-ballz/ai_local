@@ -106,6 +106,77 @@ curl http://localhost:8080/v1/chat/completions \
 
 ---
 
+## MoE and CPU/GPU split inference
+
+For large MoE models that exceed VRAM, llama.cpp can automatically split across GPU and RAM. The recommended approach — keeping attention/KV in VRAM and offloading routed expert weights to RAM — is controlled with a handful of flags.
+
+### Key flags
+
+| Flag | Meaning |
+|------|---------|
+| `--fit on` | Auto-fit model across available GPU VRAM and system RAM (MoE-aware) |
+| `-ngl 99` | Send all layers to GPU first (combine with `--fit` or `--n-cpu-moe`) |
+| `--n-cpu-moe` | Move routed expert weights back to RAM after `-ngl 99` |
+| `-fa on` | Enable flash attention — faster KV operations (**requires CUDA ≥ 8.0 / Volta+, not Pascal**) |
+| `-ctk q8_0` | Quantise the K-cache to 8-bit — saves VRAM with minimal quality loss |
+| `-ctv q8_0` | Quantise the V-cache to 8-bit — same |
+| `--no-context-shift` | Disable automatic context sliding/trimming when the window fills |
+| `--chat-template-kwargs` | Pass JSON options to the chat template (see thinking mode below) |
+
+### Practical example: Qwen3.6-35B-A3B on a hybrid setup
+
+This command was shared by the community as a reference for running a 35B MoE model across GPU VRAM and system RAM:
+
+```bash
+llama-server \
+    --model ~/models/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf \
+    --port 8001 \
+    --alias qwen3.6-35b-a3b \
+    -c 131072 \
+    -n 32768 \
+    --no-context-shift \
+    --temp 0.6 \
+    --top-p 0.95 \
+    --top-k 20 \
+    --repeat-penalty 1.00 \
+    --presence-penalty 0.00 \
+    --fit on \
+    -fa on \
+    -ctk q8_0 \
+    -ctv q8_0 \
+    --chat-template-kwargs '{"preserve_thinking": true}'
+```
+
+What each flag does:
+
+| Flag | Effect |
+|------|--------|
+| `-c 131072` | 128K context window (131072 = 128 × 1024) |
+| `-n 32768` | Up to 32K output tokens |
+| `--no-context-shift` | Don't slide/trim old context when the window fills |
+| `--temp 0.6` | Moderate randomness |
+| `--top-p 0.95` | Sample from top 95% probability mass |
+| `--top-k 20` | Consider only the top 20 next-token candidates |
+| `--repeat-penalty 1.00` | No extra repetition penalty |
+| `--presence-penalty 0.00` | No presence penalty |
+| `--fit on` | Auto-split model across VRAM and RAM |
+| `-fa on` | Flash attention (Volta+ GPU only) |
+| `-ctk q8_0` | K-cache stored at 8-bit |
+| `-ctv q8_0` | V-cache stored at 8-bit |
+| `--chat-template-kwargs '{"preserve_thinking": true}'` | Keep `<think>` blocks visible in output |
+
+!!! note "Model filename decoded"
+    `Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf`:  
+    **Qwen3.6** = model family · **35B** = total params · **A3B** = ~3B active per token (MoE) · **UD** = Unsloth Dynamic quantization · **Q4_K_XL** = 4-bit, larger/higher-fidelity variant than Q4_K_M
+
+!!! warning "Flash attention compatibility"
+    `-fa on` requires CUDA ≥ 8.0 (Volta, Turing, Ampere, Ada, Hopper). It will not work on Pascal (GTX 1050 Ti, GTX 10xx series, CUDA 6.1). Omit `-fa on` on Pascal hardware.
+
+!!! tip "KV cache quantisation"
+    `-ctk q8_0 -ctv q8_0` reduces KV cache VRAM usage significantly at long contexts with negligible quality impact. Use this whenever VRAM is tight, regardless of whether you are running MoE or dense models.
+
+---
+
 ## Source code
 
 [github.com/ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) — MIT license

@@ -41,6 +41,7 @@ nav:
     - Qwen: models/qwen.md
     - DeepSeek: models/deepseek.md
     - Gemma: models/gemma.md
+    - Mistral: models/mistral.md
   - Inference:
     - Overview: inference/index.md
     - Ollama: inference/ollama.md
