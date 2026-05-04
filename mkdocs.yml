@@ -37,6 +37,7 @@ nav:
     - i5-4570 + GTX 1050 Ti: hardware/i5-4570-1050ti.md
   - Models:
     - Overview: models/index.md
+    - How LLMs Work: models/how-llms-work.md
     - Llama: models/llama.md
     - Qwen: models/qwen.md
     - DeepSeek: models/deepseek.md
