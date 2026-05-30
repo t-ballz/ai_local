@@ -11,6 +11,7 @@ Overview of the major open-weight model families for local inference.
 | [Mistral](mistral.md) | Mistral AI | Apache 2.0 | Multilingual + vision; Small 3.1 fits 16 GB VRAM |
 | [SmolLM3](smollm.md) | HuggingFace | Apache 2.0 | 3B, 128K ctx, dual-mode reasoning; 1.92 GB Q4_K_M |
 | [LFM](lfm.md) | Liquid AI | lfm1.0 | Hybrid MoE (not Transformer); 8B-A1B, 128K ctx, 5.16 GB Q4_K_M |
+| [Kimi K2](kimi.md) | Moonshot AI | Modified MIT | 1T MoE (32B active), 262K ctx, agentic coding; ~550 GB Q4 (cloud/API) |
 
 ## Quick size guide
 

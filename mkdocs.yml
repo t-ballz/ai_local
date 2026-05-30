@@ -45,6 +45,7 @@ nav:
     - Mistral: models/mistral.md
     - SmolLM3: models/smollm.md
     - LFM: models/lfm.md
+    - Kimi K2: models/kimi.md
   - Inference:
     - Overview: inference/index.md
     - Ollama: inference/ollama.md
