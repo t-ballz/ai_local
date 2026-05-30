@@ -4,13 +4,35 @@
 
 ## TL;DR
 
-Alibaba Cloud's open-weight family. Generations: **Qwen3** (April 2025) → **Qwen3.5** (Feb–Mar 2026) → **Qwen3.6** (2026, confirmed, details TBC). All share hybrid thinking mode, Apache 2.0 licence, and strong coding/math performance. Qwen3.5 adds native vision and 262K context across the range.
+Alibaba Cloud's open-weight family. Generations: **Qwen3** (April 2025) → **Qwen3.5** (Feb–Mar 2026) → **Qwen3.6** (April 2026). All share hybrid thinking mode, Apache 2.0 licence, and strong coding/math performance. Qwen3.6 focuses on agentic use and more efficient reasoning; Qwen3.6-27B reportedly outperforms Qwen3.5-397B-A17B on coding benchmarks.
 
 ---
 
-## Qwen3.5 (Feb–Mar 2026) — current generation
+## Qwen3.6 (April 2026) — current generation
 
-Qwen3.5 adds native **vision** (text + images), **262K context** across all sizes, and maintains hybrid thinking mode. Apache 2.0.
+Two open-weight variants released mid-April 2026. Text-only (no vision). Hybrid thinking mode. Apache 2.0.
+
+GGUF sizes from Unsloth UD-Q4_K_M quants; standard Q4_K_M from other providers may differ slightly.
+
+| Model | Type | Active / Total | Context | GGUF Q4_K_M | Notes |
+|-------|------|---------------|---------|------------|-------|
+| Qwen3.6-27B | Dense | 27B | 262K (1M ext.) | ~16.8 GB | Coding focus; beats 3.5-397B on code |
+| Qwen3.6-35B-A3B | MoE | 3B / 35B | 262K (1M ext.) | ~22.1 GB | 256 experts, 12:1 sparsity |
+
+**Key changes vs Qwen3.5:**
+
+- **Reasoning efficiency** — produces more output per reasoning token (addresses "overthinking"); default sampling temperature 0.2 (was 0.6), top_p 0.9 (was 0.95)
+- **Agentic tuning** — stronger tool-calling and MCP workflow performance
+- **Text-only** — no native vision in open-weight models (unlike Qwen3.5)
+
+!!! note "1M context extension"
+    262K is the native context. Extending to ~1M tokens is supported but requires specific inference configuration; performance at extreme lengths is less tested.
+
+---
+
+## Qwen3.5 (Feb–Mar 2026) — previous generation
+
+Adds native **vision** (text + images), **262K context** across all sizes, and hybrid thinking mode. Apache 2.0.
 
 Sizes marked † are confirmed from HuggingFace GGUF repos. Others are estimates (±10–15%).
 
@@ -42,9 +64,6 @@ Sizes marked † are confirmed from HuggingFace GGUF repos. Others are estimates
 !!! tip "MoE efficiency"
     Qwen3-30B-A3B runs at 3B active parameters but competes with the dense 32B on many tasks — at roughly the same disk footprint but much faster inference and lower VRAM use. Qwen3.5-35B-A3B is its direct successor.
 
-!!! note "Qwen3.6"
-    Qwen3.6 is confirmed to exist (GitHub repo at [github.com/QwenLM/Qwen3.6](https://github.com/QwenLM/Qwen3.6); at minimum a 35B-A3B variant). Full specs not yet documented here — verify before relying on any details.
-
 ---
 
 ## Hybrid thinking mode
@@ -65,10 +84,11 @@ Thinking mode activates an internal chain-of-thought (like DeepSeek R1) before p
 | Use case | Recommended |
 |----------|------------|
 | Edge / embedded | Qwen3-0.6B, 1.7B |
-| Budget GPU (8 GB VRAM) | Qwen3-4B, 8B |
-| Coding & math (mid tier) | Qwen3-14B, 30B-A3B |
-| High-quality local reasoning | Qwen3-32B |
-| Flagship (multi-GPU) | Qwen3-235B-A22B |
+| Budget GPU (8 GB VRAM) | Qwen3.5-4B, 9B (vision); Qwen3-4B, 8B |
+| Coding / agentic (single GPU) | Qwen3.6-27B |
+| Coding / agentic (MoE, lower VRAM) | Qwen3.6-35B-A3B |
+| Vision + reasoning (mid tier) | Qwen3.5-9B, 27B |
+| Flagship (multi-GPU) | Qwen3.5-397B-A17B |
 
 - **Coding & math**: among the strongest open-weight models at each size tier
 - **Multilingual**: 119 languages, trained on ~36T tokens
