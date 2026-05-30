@@ -4,7 +4,10 @@
 
 ## TL;DR
 
-Meta's open-weight model family. Llama 3.x covers dense models from 1B to 405B. Llama 4 (April 2025) switches to MoE and adds native multimodal (text + images). The 3.3 70B dense and 4 Scout MoE are the most popular for local use. Custom Meta Llama License (permissive for most uses; commercial use permitted under 700M MAU threshold).
+Meta's open-weight model family. Llama 3.x covers dense models from 1B to 405B. Llama 4 (April 2025) switches to MoE and adds native multimodal (text + images). The 3.3 70B dense and 4 Scout MoE are the most popular for local use. In April 2026 Meta launched **Muse Spark** — a proprietary closed-source model that appears to be their frontier going forward; Llama 4 remains the latest open-weight release.
+
+!!! warning "EU licence restriction — Llama 4"
+    The Llama 4 Community License (April 2025) **denies rights to EU-domiciled individuals and EU-based companies** for multimodal models. Text-only use may still be permitted — check [llama.com/llama4/license](https://www.llama.com/llama4/license/) before deploying in the EU.
 
 ---
 
@@ -53,8 +56,16 @@ Llama 4 Maverick benchmarks: 73.4 MMMU (image reasoning), 43.4 LiveCodeBench, 80
 
 ---
 
+## Muse Spark (April 2026)
+
+Meta launched Muse Spark via Meta Superintelligence Labs as a proprietary, closed-source cloud model — no downloadable weights, API/invite-only. It integrates into Meta's consumer products (Facebook, Instagram, WhatsApp, Ray-Ban glasses). Whether Meta continues to release new open-weight Llama generations alongside it is not yet clear.
+
+Llama 4 Behemoth (~2T total, 288B active, 16 experts) was announced alongside Scout/Maverick as the teacher model used for codistillation, but has **not been released publicly** as of May 2026.
+
+---
+
 ## Source & licence
 
 - **Source**: [github.com/meta-llama/llama-models](https://github.com/meta-llama/llama-models)
-- **Licence**: Meta Llama License (open weights; commercial use allowed under 700M MAU)
+- **Licence**: Llama 4 Community License — see [llama.com/llama4/license](https://www.llama.com/llama4/license/) (EU multimodal restriction applies)
 - **GGUF models**: search `meta-llama` or `bartowski` on [huggingface.co](https://huggingface.co)

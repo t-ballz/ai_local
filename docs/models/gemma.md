@@ -36,7 +36,14 @@ All Gemma 3 models support **text + images** (multimodal). 140+ languages. Conte
 !!! tip "MoE speed advantage"
     Gemma 4 26B-A4B activates only 3.8B parameters per token — very fast inference at ~16 GB disk size.
 
-All Gemma 4 models support **text + images + video** and natively handle structured output, function calling, and tool use.
+All Gemma 4 models support **text + images + video** and natively handle structured output, function calling, and tool use. E2B and E4B additionally accept **audio input** (speech).
+
+**Gemma 4 benchmarks:**
+
+| Model | MMLU-Pro | LiveCodeBench | Arena rank |
+|-------|----------|--------------|------------|
+| 31B | 85.2% | 80.0% | #3 open model |
+| 26B-A4B | 82.6% | — | #6 open model |
 
 ---
 

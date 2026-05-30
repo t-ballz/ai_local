@@ -14,7 +14,18 @@ GGUF sizes confirmed from [bartowski/HuggingFaceTB_SmolLM3-3B-GGUF](https://hugg
 
 | Model | Type | Params | Context | GGUF Q4_K_M | GGUF Q8_0 |
 |-------|------|--------|---------|------------|----------|
-| SmolLM3-3B | Dense | 3B | 128K | 1.92 GB | 3.28 GB |
+| SmolLM3-3B | Dense | 3B | 64K (128K YARN) | 1.92 GB | 3.28 GB |
+
+!!! note "Context window"
+    64K is the native trained context. 128K is achievable via YARN extrapolation; quality may degrade past 64K.
+
+**Benchmarks:**
+
+| Benchmark | Without thinking | With thinking |
+|-----------|-----------------|--------------|
+| GSM-Plus | 72.8% | 83.4% |
+| AIME 2025 | 9.3% | 36.7% |
+| IFEval | 76.7% | — |
 
 ---
 
