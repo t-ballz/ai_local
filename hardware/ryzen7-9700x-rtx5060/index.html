@@ -1,0 +1,2263 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes on running AI locally">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../i5-4570-1050ti/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Ryzen 7 9700X + RTX 5060 - AI Local — Personal Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ryzen-7-9700x-rtx-5060-16-gb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Local — Personal Knowledge Base" class="md-header__button md-logo" aria-label="AI Local — Personal Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Local — Personal Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ryzen 7 9700X + RTX 5060
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../models/" class="md-tabs__link">
+          
+  
+  
+  Models
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../inference/" class="md-tabs__link">
+          
+  
+  
+  Inference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tools/" class="md-tabs__link">
+          
+  
+  
+  Tools
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Local — Personal Knowledge Base" class="md-nav__button md-logo" aria-label="AI Local — Personal Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Local — Personal Knowledge Base
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ryzen 7 9700X + RTX 5060
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ryzen 7 9700X + RTX 5060
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-specs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System specs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-moe-offloading-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How MoE offloading actually works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How MoE offloading actually works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#every-layer-has-both-attention-and-expert-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Every layer has both attention AND expert weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expert-routing-is-dynamic-you-cannot-pre-pin-experts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expert routing is dynamic — you cannot pre-pin experts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-correct-vram-priority-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The correct VRAM priority order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bandwidth-is-the-bottleneck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bandwidth is the bottleneck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fully-gpu-resident-models-best-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fully GPU-resident models (best performance)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moe-models-with-cpu-offload-uses-128-gb-ram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MoE models with CPU offload (uses 128 GB RAM)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llamacpp-flags-for-moe-offloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        llama.cpp flags for MoE offloading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="llama.cpp flags for MoE offloading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lm-studio-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LM Studio GUI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-wont-run-on-this-rig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What won't run on this rig
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../i5-4570-1050ti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    i5-4570 + GTX 1050 Ti
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/how-llms-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How LLMs Work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/llama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Llama
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/qwen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qwen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/deepseek/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DeepSeek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/gemma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/mistral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mistral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/smollm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SmolLM3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/lfm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LFM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/kimi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kimi K2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/holo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Holo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/mellum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mellum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specialized
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Specialized
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/miso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miso One (TTS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/locate-anything/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LocateAnything-3B
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/ideogram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ideogram 4.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inference/ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ollama
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inference/llama-cpp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    llama.cpp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inference/lm-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LM Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UI Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/ui/openwebui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open WebUI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/ui/anythingllm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AnythingLLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CLI Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/cli/claude-code-alternatives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code Alternatives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-specs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System specs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-moe-offloading-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How MoE offloading actually works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How MoE offloading actually works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#every-layer-has-both-attention-and-expert-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Every layer has both attention AND expert weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expert-routing-is-dynamic-you-cannot-pre-pin-experts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expert routing is dynamic — you cannot pre-pin experts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-correct-vram-priority-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The correct VRAM priority order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bandwidth-is-the-bottleneck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bandwidth is the bottleneck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fully-gpu-resident-models-best-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fully GPU-resident models (best performance)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moe-models-with-cpu-offload-uses-128-gb-ram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MoE models with CPU offload (uses 128 GB RAM)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llamacpp-flags-for-moe-offloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        llama.cpp flags for MoE offloading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="llama.cpp flags for MoE offloading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lm-studio-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LM Studio GUI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-wont-run-on-this-rig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What won't run on this rig
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ryzen-7-9700x-rtx-5060-16-gb">Ryzen 7 9700X + RTX 5060 16 GB<a class="headerlink" href="#ryzen-7-9700x-rtx-5060-16-gb" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Research sources: <a href="https://willitrunai.com">willitrunai.com</a>, <a href="https://apxml.com">apxml.com</a>, <a href="https://www.compute-market.com">compute-market.com</a>, <a href="https://lmstudio.ai/docs">lmstudio.ai/docs</a>, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1ro9xsw/please_anyone_can_we_offload_the_moe_layers_to/">r/LocalLLaMA thread on MoE offloading</a></p>
+</blockquote>
+<h2 id="system-specs">System specs<a class="headerlink" href="#system-specs" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Spec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>AMD Ryzen 7 9700X (8-core, Zen 5)</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>128 GB DDR5</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>RTX 5060 16 GB GDDR7 (likely RTX 5060 Ti 16 GB variant)</td>
+</tr>
+<tr>
+<td>VRAM bandwidth</td>
+<td>~448 GB/s (GDDR7, 128-bit bus) — approximate</td>
+</tr>
+<tr>
+<td>RAM bandwidth</td>
+<td>~90 GB/s (DDR5-5600 dual-channel, theoretical peak) — approximate</td>
+</tr>
+<tr>
+<td>PCIe bandwidth</td>
+<td>~64 GB/s (PCIe 5.0 ×16, practical; theoretical 128 GB/s)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="how-moe-offloading-actually-works">How MoE offloading actually works<a class="headerlink" href="#how-moe-offloading-actually-works" title="Permanent link">&para;</a></h2>
+<p>This matters before you look at any model table. The principles below come from the r/LocalLLaMA thread linked above (particularly u/LagOps91, u/RG_Fusion, u/Velocita84, u/Expensive-Paint-9490, u/DanRey90).</p>
+<h3 id="every-layer-has-both-attention-and-expert-weights">Every layer has both attention AND expert weights<a class="headerlink" href="#every-layer-has-both-attention-and-expert-weights" title="Permanent link">&para;</a></h3>
+<p>A common misconception is that MoE models have distinct "MoE layers" separate from "attention layers." In reality every transformer layer contains:</p>
+<ul>
+<li>An <strong>attention block</strong> (always active — fires on every single token)</li>
+<li>A <strong>FFN block</strong>, which in MoE models is replaced by a set of expert networks (only a sparse subset fires per token, selected by a router)</li>
+</ul>
+<h3 id="expert-routing-is-dynamic-you-cannot-pre-pin-experts">Expert routing is dynamic — you cannot pre-pin experts<a class="headerlink" href="#expert-routing-is-dynamic-you-cannot-pre-pin-experts" title="Permanent link">&para;</a></h3>
+<p>For a model like Qwen3-30B-A3B: per token, only ~3B parameters are active, but <em>which</em> 3B changes every token across the full 30B weight pool. The router decides this at runtime based on the input. You cannot know in advance which experts will be needed, so the full weight pool must remain accessible at all times.</p>
+<h3 id="the-correct-vram-priority-order">The correct VRAM priority order<a class="headerlink" href="#the-correct-vram-priority-order" title="Permanent link">&para;</a></h3>
+<p>Put weights that fire <strong>every token</strong> in VRAM first. Leave sparse weights (routed experts) in RAM.</p>
+<table>
+<thead>
+<tr>
+<th>Tensor type</th>
+<th>Fires per token</th>
+<th>VRAM priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attention weights</td>
+<td>Every token</td>
+<td><strong>Highest</strong></td>
+</tr>
+<tr>
+<td>KV cache</td>
+<td>Every token (re-read/written)</td>
+<td><strong>Highest</strong></td>
+</tr>
+<tr>
+<td>Router weights</td>
+<td>Every token</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Shared / always-on experts</td>
+<td>Every token</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Routed expert weights</td>
+<td>Sparse — only a subset per token</td>
+<td>Low — can live in RAM</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bandwidth-is-the-bottleneck">Bandwidth is the bottleneck<a class="headerlink" href="#bandwidth-is-the-bottleneck" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Link</th>
+<th>Bandwidth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VRAM (GDDR7, this card)</td>
+<td>~448 GB/s</td>
+</tr>
+<tr>
+<td>PCIe 5.0 (CPU↔GPU)</td>
+<td>~128 GB/s theoretical, ~64 GB/s practical</td>
+</tr>
+<tr>
+<td>DDR5-5600 dual-channel</td>
+<td>~90 GB/s</td>
+</tr>
+</tbody>
+</table>
+<p>When a routed expert lives in RAM, each token that needs it causes a PCIe transfer. This is ~5–7× slower than reading from VRAM. Keeping attention and KV in VRAM avoids the worst of this because those reads happen every token regardless.</p>
+<p><strong>Real-world benchmark from the thread (u/RG_Fusion):</strong> Running Qwen3.5-397B-A17B Q4 on an 8-channel DDR4 system, offloading 31 GB of non-expert tensors (attention, KV, router, shared experts) to an RTX Pro 4500 raised decode speed from <strong>6 t/s → 19 t/s</strong> — a 3× speedup purely from moving the always-active tensors to GPU.</p>
+<hr />
+<h2 id="fully-gpu-resident-models-best-performance">Fully GPU-resident models (best performance)<a class="headerlink" href="#fully-gpu-resident-models-best-performance" title="Permanent link">&para;</a></h2>
+<p>Everything fits in 16 GB VRAM — fast, no CPU overhead.</p>
+<p>Sizes marked † are confirmed from HuggingFace GGUF repos. Others are estimates (±10–15%).</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Type</th>
+<th>GGUF Q4_K_M</th>
+<th>VRAM used</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemma 4 26B-A4B</td>
+<td>MoE</td>
+<td>~16 GB</td>
+<td>~16 GB</td>
+<td>4B active per token — see caveat below</td>
+</tr>
+<tr>
+<td>Mistral Small 3.1 24B</td>
+<td>Dense</td>
+<td>14.3 GB†</td>
+<td>~14.3 GB</td>
+<td>Vision + multilingual; fits with 1.7 GB headroom</td>
+</tr>
+<tr>
+<td>Qwen3.5-9B</td>
+<td>Dense</td>
+<td>5.68 GB†</td>
+<td>~5.7 GB</td>
+<td>Newest Qwen; 262K context, vision, hybrid thinking</td>
+</tr>
+<tr>
+<td>Qwen3-14B</td>
+<td>Dense</td>
+<td>~9 GB</td>
+<td>~9 GB</td>
+<td>Previous-gen Qwen; still strong</td>
+</tr>
+<tr>
+<td>DeepSeek R1-Distill-Qwen-14B</td>
+<td>Dense</td>
+<td>~9 GB</td>
+<td>~9 GB</td>
+<td>Reasoning-focused; strong math and code</td>
+</tr>
+<tr>
+<td>Gemma 3 12B</td>
+<td>Dense</td>
+<td>~7.5 GB</td>
+<td>~7.5 GB</td>
+<td>Multimodal (text + images); solid all-rounder</td>
+</tr>
+<tr>
+<td>Qwen3-8B</td>
+<td>Dense</td>
+<td>~5 GB</td>
+<td>~5 GB</td>
+<td>Good for high-throughput use</td>
+</tr>
+<tr>
+<td>DeepSeek R1-Distill-Qwen-7B</td>
+<td>Dense</td>
+<td>~4.5 GB</td>
+<td>~4.5 GB</td>
+<td>Reasoning on budget VRAM</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Gemma 4 26B-A4B caveat</p>
+<p>Despite fitting in 16 GB, Gemma 4's individual layers are reported to be very large (~400 MB each). One community member (u/Pattinathar) reports that for cards with less headroom, the VRAM↔RAM thrashing from a partial split is worse than pure CPU inference. On a full 16 GB card this is less likely to matter, but benchmark both <code>--gpu max</code> and <code>--gpu off</code> if you see unexpectedly low tokens/s.</p>
+</div>
+<hr />
+<h2 id="moe-models-with-cpu-offload-uses-128-gb-ram">MoE models with CPU offload (uses 128 GB RAM)<a class="headerlink" href="#moe-models-with-cpu-offload-uses-128-gb-ram" title="Permanent link">&para;</a></h2>
+<p>With the correct strategy — attention/KV in VRAM, routed experts in RAM — the 128 GB of system RAM lets you run models far larger than 16 GB with acceptable speed.</p>
+<p>All GGUF sizes are Q4_K_M estimates (±10–15%) unless marked †.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Total GGUF Q4</th>
+<th>Non-expert in VRAM</th>
+<th>Expert spill to RAM</th>
+<th>Expected speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen3.5-35B-A3B</td>
+<td>~19–22 GB</td>
+<td>~16 GB</td>
+<td>~3–6 GB</td>
+<td>Fast — small spill; successor to Qwen3-30B-A3B</td>
+</tr>
+<tr>
+<td>Qwen3-30B-A3B</td>
+<td>~17–19 GB</td>
+<td>~16 GB</td>
+<td>~1–3 GB</td>
+<td>Fast — tiny spill</td>
+</tr>
+<tr>
+<td>Llama 4 Scout (109B-A17B)</td>
+<td>~65 GB</td>
+<td>~16 GB</td>
+<td>~49 GB</td>
+<td>Slow — heavy PCIe pressure</td>
+</tr>
+<tr>
+<td>Qwen3-235B-A22B</td>
+<td>~132 GB</td>
+<td>~16 GB</td>
+<td>~116 GB</td>
+<td>Very slow — impractical for chat</td>
+</tr>
+<tr>
+<td>DeepSeek V3/R1 (671B)</td>
+<td>~404 GB</td>
+<td>—</td>
+<td>—</td>
+<td>Doesn't fit even with all RAM</td>
+</tr>
+</tbody>
+</table>
+<p>Community-reported speeds for smaller cards with similar hybrid setups:</p>
+<ul>
+<li>Qwen 3.5 122B on 12 GB VRAM (LM Studio): <strong>~12 t/s</strong> (u/Long_comment_san)</li>
+<li>Qwen at Q4/32K context, DDR5, hybrid inference: <strong>~10 t/s</strong> (u/LagOps91)</li>
+</ul>
+<p>Expect similar or somewhat higher speeds on this 16 GB build due to more non-expert tensors fitting in VRAM.</p>
+<hr />
+<h2 id="llamacpp-flags-for-moe-offloading">llama.cpp flags for MoE offloading<a class="headerlink" href="#llamacpp-flags-for-moe-offloading" title="Permanent link">&para;</a></h2>
+<p>LM Studio uses llama.cpp internally — these flags apply via the LM Studio advanced load settings or when running llama.cpp directly.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Step 1: send all layers to GPU</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>-ngl<span class="w"> </span><span class="m">99</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Step 2: move routed expert weights back to RAM (all layers)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>--n-cpu-moe
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Alternative: let llama.cpp work out the optimal split automatically</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>--fit
+</code></pre></div>
+<p>The <code>--fit</code> flag is the simplest option — it prioritises attention and KV in VRAM and packs as many expert weights as possible into remaining space. Use the manual flags when you want explicit control.</p>
+<p>For fine-grained control (selectively return specific layers' experts back to GPU to fill remaining VRAM):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>-ot<span class="w"> </span><span class="s1">&#39;blk.([X-Y]).ffn_.*exps.*=CUDA0&#39;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># X-Y = layer range; CUDA0 = GPU index</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Verify flag names</p>
+<p>Flag names were sourced from the r/LocalLLaMA thread (u/Velocita84, u/RG_Fusion). Run <code>llama-server --help | grep -i moe</code> to confirm exact names for your installed version, as llama.cpp flag names change between releases.</p>
+</div>
+<h3 id="lm-studio-gui">LM Studio GUI<a class="headerlink" href="#lm-studio-gui" title="Permanent link">&para;</a></h3>
+<p>LM Studio exposes expert offloading via <strong>Advanced load settings</strong> → "Force Model Expert Weights onto CPU" toggle (confirmed in version 0.3.39+). The CLI equivalent is <code>--n-cpu-moe</code>. If neither appears in your version, use <code>--fit</code> via the llama.cpp parameters field.</p>
+<div class="admonition note">
+<p class="admonition-title">Verify LM Studio setting name</p>
+<p>The exact toggle name in LM Studio's GUI was sourced from secondary research and may differ in your installed version. Check the Advanced load settings panel.</p>
+</div>
+<hr />
+<h2 id="what-wont-run-on-this-rig">What won't run on this rig<a class="headerlink" href="#what-wont-run-on-this-rig" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSeek V3/R1 (671B)</td>
+<td>~404 GB Q4 — exceeds VRAM + RAM combined</td>
+</tr>
+<tr>
+<td>Llama 4 Maverick (400B)</td>
+<td>~240 GB Q4 — exceeds VRAM + RAM combined</td>
+</tr>
+<tr>
+<td>Qwen3-235B-A22B</td>
+<td>Fits in RAM+VRAM combined, but KV cache pressure and PCIe bottleneck make real-time chat impractical</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
