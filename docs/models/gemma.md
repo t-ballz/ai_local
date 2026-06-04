@@ -4,7 +4,7 @@
 
 ## TL;DR
 
-Google DeepMind's open-weight family. Gemma 3 (March 2025) brought 128K context and multimodal (text + images) to small models. Gemma 4 (April 2026) adds MoE, video understanding, and a massive coding improvement — the 31B hits 80% on LiveCodeBench. Apache 2.0 licence.
+Google DeepMind's open-weight family. Gemma 3 (March 2025) brought 128K context and multimodal (text + images) to small models. Gemma 4 (April–June 2026) adds MoE, video understanding, and a massive coding improvement. A new **12B dense** variant (June 3, 2026) fills the gap between the edge models and the 26B MoE with full audio+video+image support and 256K context at ~6.5 GB Q4. Apache 2.0 licence.
 
 ---
 
@@ -21,29 +21,34 @@ All Gemma 3 models support **text + images** (multimodal). 140+ languages. Conte
 
 ---
 
-## Gemma 4 (April 2026) — MoE + multimodal + video
+## Gemma 4 (April–June 2026) — current generation
 
-| Model | Type | Active / Total | Context | GGUF Q4 approx | RAM (Q4) |
-|-------|------|---------------|---------|---------------|---------|
-| Gemma 4 E2B | Dense | ~2B eff. | 128K | ~1.5 GB | ~5 GB |
-| Gemma 4 E4B | Dense | ~4B eff. | 128K | ~2.7 GB | ~8 GB |
-| Gemma 4 26B-A4B | MoE | 3.8B / 26B | 256K | ~16 GB | ~18 GB |
-| Gemma 4 31B | Dense | 31B | 256K | ~20 GB | ~22 GB |
+| Model | Type | Params | Context | GGUF Q4 approx | Released |
+|-------|------|--------|---------|---------------|---------|
+| Gemma 4 E2B | Dense (PLE) | ~2B eff. | 128K | ~1.5 GB | Apr 2026 |
+| Gemma 4 E4B | Dense (PLE) | ~4B eff. | 128K | ~2.7 GB | Apr 2026 |
+| **Gemma 4 12B** | Dense | 11.95B | 256K | **~6.5 GB est.** | Jun 3 2026 |
+| Gemma 4 26B-A4B | MoE | 3.8B / 26B | 256K | ~16 GB | Apr 2026 |
+| Gemma 4 31B | Dense | 31B | 256K | ~20 GB | Apr 2026 |
 
-!!! note "E2B / E4B naming"
-    "Effective 2B/4B" — these are Gemma 4's edge models, optimised for mobile and low-power hardware while matching much larger Gemma 3 models in quality.
+!!! note "E2B / E4B vs 12B architecture"
+    E2B/E4B use **Per-Layer Embeddings (PLE)** — a parameter-efficient edge design, 128K context. The 12B uses a standard dense decoder with **encoder-free** unified multimodal projection (no separate vision/audio encoder), giving it 256K context and stronger per-token quality.
+
+!!! tip "12B sweet spot"
+    At ~6.5 GB Q4, Gemma 4 12B fits on an 8 GB GPU (RTX 3070, etc.) while offering full audio + video + image + text and 256K context — a better-rounded option than the 26B-A4B if VRAM is limited.
 
 !!! tip "MoE speed advantage"
     Gemma 4 26B-A4B activates only 3.8B parameters per token — very fast inference at ~16 GB disk size.
 
-All Gemma 4 models support **text + images + video** and natively handle structured output, function calling, and tool use. E2B and E4B additionally accept **audio input** (speech).
+All Gemma 4 models support **text + images + video**. E2B, E4B, and **12B** additionally accept **audio input** (ASR + speech translation; 12B uses encoder-free design, max ~30 s clips).
 
 **Gemma 4 benchmarks:**
 
-| Model | MMLU-Pro | LiveCodeBench | Arena rank |
-|-------|----------|--------------|------------|
-| 31B | 85.2% | 80.0% | #3 open model |
-| 26B-A4B | 82.6% | — | #6 open model |
+| Model | MMLU-Pro | LiveCodeBench | GPQA Diamond | Arena rank |
+|-------|----------|--------------|-------------|------------|
+| 31B | 85.2% | 80.0% | — | #3 open model |
+| 26B-A4B | 82.6% | — | — | #6 open model |
+| **12B** | **77.2%** | **72.0%** | **78.8%** | — |
 
 ---
 
@@ -53,8 +58,9 @@ All Gemma 4 models support **text + images + video** and natively handle structu
 |----------|------------|
 | On-device / mobile | Gemma 4 E2B, E4B |
 | Light local inference | Gemma 3 4B, Gemma 4 E4B |
+| Vision + audio + OCR (8 GB GPU) | Gemma 4 12B |
 | Vision + OCR + document parsing | Gemma 3 12B / 27B, Gemma 4 31B |
-| Coding (local, single GPU) | Gemma 4 31B |
+| Coding (local, single GPU) | Gemma 4 31B, Gemma 4 12B |
 | Agentic workflows / tool use | Gemma 4 26B-A4B or 31B |
 | Fine-tuning base | Gemma 3 4B / 12B (well-supported) |
 
