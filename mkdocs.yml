@@ -46,6 +46,12 @@ nav:
     - SmolLM3: models/smollm.md
     - LFM: models/lfm.md
     - Kimi K2: models/kimi.md
+    - Holo: models/holo.md
+    - Mellum: models/mellum.md
+    - Specialized:
+      - Miso One (TTS): models/miso.md
+      - LocateAnything-3B: models/locate-anything.md
+      - Ideogram 4.0: models/ideogram.md
   - Inference:
     - Overview: inference/index.md
     - Ollama: inference/ollama.md
