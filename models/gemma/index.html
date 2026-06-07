@@ -778,6 +778,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gemma-4-qat-june-5-2026-quantization-aware-training-checkpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemma 4 QAT (June 5, 2026) — quantization-aware training checkpoints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#strengths-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -982,6 +993,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../nemotron/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nemotron
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -999,10 +1038,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" >
         
           
-          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_14" id="__nav_3_14_label" tabindex="">
             
   
   
@@ -1020,8 +1059,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_13">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_14">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1102,6 +1141,34 @@
     
   
     Ideogram 4.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../harness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Harness-1 (Search Agent)
   
 
     
@@ -1281,6 +1348,34 @@
     
   
     LM Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inference/turboquant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TurboQuant (KV Cache)
   
 
     
@@ -1641,6 +1736,94 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RAG
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/turbovec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    turbovec (Vector Search)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1701,6 +1884,17 @@
     <span class="md-ellipsis">
       
         Gemma 4 (April–June 2026) — current generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemma-4-qat-june-5-2026-quantization-aware-training-checkpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemma 4 QAT (June 5, 2026) — quantization-aware training checkpoints
       
     </span>
   </a>
@@ -1905,6 +2099,53 @@
 </tr>
 </tbody>
 </table>
+<hr />
+<h2 id="gemma-4-qat-june-5-2026-quantization-aware-training-checkpoints">Gemma 4 QAT (June 5, 2026) — quantization-aware training checkpoints<a class="headerlink" href="#gemma-4-qat-june-5-2026-quantization-aware-training-checkpoints" title="Permanent link">&para;</a></h2>
+<p>Google released QAT checkpoints for all five Gemma 4 sizes on June 5, 2026. Unlike post-training quantization (PTQ), QAT simulates 4-bit arithmetic during training so the model learns to compensate for the precision loss — resulting in much smaller models with minimal quality degradation.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>BF16 baseline</th>
+<th>Q4_0 QAT</th>
+<th>Mobile QAT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E2B</td>
+<td>9.6 GB</td>
+<td>3.2 GB</td>
+<td><strong>&lt; 1 GB</strong></td>
+</tr>
+<tr>
+<td>E4B</td>
+<td>~15 GB</td>
+<td>~5 GB</td>
+<td>—</td>
+</tr>
+<tr>
+<td>12B</td>
+<td>~25 GB</td>
+<td>~7 GB</td>
+<td>—</td>
+</tr>
+<tr>
+<td>26B-A4B</td>
+<td>—</td>
+<td>~15 GB</td>
+<td>—</td>
+</tr>
+<tr>
+<td>31B</td>
+<td>—</td>
+<td>~18 GB</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>The mobile-optimized format cuts E2B (text-only, without Per-Layer Embeddings) below 1 GB, targeting on-device deployment on phones and laptops.</p>
+<p><strong>Available via</strong>: Ollama, llama.cpp (GGUF Q4_0 QAT checkpoints on HuggingFace/Unsloth), vLLM.</p>
 <hr />
 <h2 id="strengths-use-cases">Strengths &amp; use cases<a class="headerlink" href="#strengths-use-cases" title="Permanent link">&para;</a></h2>
 <table>
