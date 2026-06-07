@@ -48,15 +48,18 @@ nav:
     - Kimi K2: models/kimi.md
     - Holo: models/holo.md
     - Mellum: models/mellum.md
+    - Nemotron: models/nemotron.md
     - Specialized:
       - Miso One (TTS): models/miso.md
       - LocateAnything-3B: models/locate-anything.md
       - Ideogram 4.0: models/ideogram.md
+      - Harness-1 (Search Agent): models/harness.md
   - Inference:
     - Overview: inference/index.md
     - Ollama: inference/ollama.md
     - llama.cpp: inference/llama-cpp.md
     - LM Studio: inference/lm-studio.md
+    - TurboQuant (KV Cache): inference/turboquant.md
   - Tools:
     - Overview: tools/index.md
     - UI Tools:
@@ -66,3 +69,5 @@ nav:
     - CLI Tools:
       - Overview: tools/cli/index.md
       - Claude Code Alternatives: tools/cli/claude-code-alternatives.md
+    - RAG:
+      - turbovec (Vector Search): tools/turbovec.md

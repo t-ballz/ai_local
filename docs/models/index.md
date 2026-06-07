@@ -14,6 +14,7 @@ Overview of the major open-weight model families for local inference.
 | [Kimi K2](kimi.md) | Moonshot AI | Modified MIT | 1T MoE (32B active), 262K ctx, agentic coding; ~550 GB Q4 (cloud/API) |
 | [Holo](holo.md) | H Company | Apache 2.0 | VLM for computer-use agents; 0.8B–35B-A3B; OSWorld 74.2% |
 | [Mellum](mellum.md) | JetBrains | Apache 2.0 | Coding MoE 12B/2.5B active, 128K ctx; 2× faster inference; ~6–7 GB Q4 |
+| [Nemotron](nemotron.md) | NVIDIA | OpenMDW-1.1 | Hybrid Mamba-Transformer MoE; Nano 30B-A3B / Super 120B-A12B / Ultra 550B-A55B; 1M ctx |
 
 ## Specialized models
 
@@ -22,6 +23,7 @@ Overview of the major open-weight model families for local inference.
 | [Miso One](miso.md) | Miso Labs | Open-source | Text-to-speech; 8B, voice cloning, 110 ms latency |
 | [LocateAnything-3B](locate-anything.md) | NVIDIA | Non-commercial | Visual grounding; bounding boxes from text queries |
 | [Ideogram 4.0](ideogram.md) | Ideogram | Gated | Text-to-image; native 2K, best-in-class text rendering |
+| [Harness-1](harness.md) | Patrick Jiang | Apache 2.0 | 20B search agent; 73% evidence recall; matches frontier model search at 20B |
 
 ## Quick size guide
 

@@ -52,6 +52,24 @@ All Gemma 4 models support **text + images + video**. E2B, E4B, and **12B** addi
 
 ---
 
+## Gemma 4 QAT (June 5, 2026) — quantization-aware training checkpoints
+
+Google released QAT checkpoints for all five Gemma 4 sizes on June 5, 2026. Unlike post-training quantization (PTQ), QAT simulates 4-bit arithmetic during training so the model learns to compensate for the precision loss — resulting in much smaller models with minimal quality degradation.
+
+| Model | BF16 baseline | Q4_0 QAT | Mobile QAT |
+|-------|--------------|----------|-----------|
+| E2B | 9.6 GB | 3.2 GB | **< 1 GB** |
+| E4B | ~15 GB | ~5 GB | — |
+| 12B | ~25 GB | ~7 GB | — |
+| 26B-A4B | — | ~15 GB | — |
+| 31B | — | ~18 GB | — |
+
+The mobile-optimized format cuts E2B (text-only, without Per-Layer Embeddings) below 1 GB, targeting on-device deployment on phones and laptops.
+
+**Available via**: Ollama, llama.cpp (GGUF Q4_0 QAT checkpoints on HuggingFace/Unsloth), vLLM.
+
+---
+
 ## Strengths & use cases
 
 | Use case | Recommended |

@@ -7,3 +7,9 @@ Local inference engines and servers.
 | [Ollama](ollama.md) | `curl … \| sh` | 11434 |
 | [llama.cpp](llama-cpp.md) | brew / build from source | 8080 |
 | [LM Studio](lm-studio.md) | `curl … \| bash` | 1234 |
+
+## Optimization
+
+| Technique | What it does |
+|-----------|-------------|
+| [TurboQuant](turboquant.md) | 6× KV cache compression, no retraining — extends usable context and batch size |
