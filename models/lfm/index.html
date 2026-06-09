@@ -851,6 +851,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lfm25-vision-language-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFM2.5 Vision-Language variants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFM2.5 Vision-Language variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lfm25-vl-16b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFM2.5-VL-1.6B
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lfm25-vl-450m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFM2.5-VL-450M
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1902,6 +1941,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lfm25-vision-language-variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFM2.5 Vision-Language variants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LFM2.5 Vision-Language variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lfm25-vl-16b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFM2.5-VL-1.6B
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lfm25-vl-450m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LFM2.5-VL-450M
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1989,7 +2067,7 @@
 <p>Source: <a href="https://www.liquid.ai/blog/lfm2-5-8b-a1b">liquid.ai</a> · <a href="https://github.com/LiquidAI">github.com/LiquidAI</a> · <a href="https://huggingface.co/LiquidAI">HuggingFace LiquidAI</a></p>
 </blockquote>
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
-<p>Liquid AI's open-weight model family. Unlike every other model in this wiki, LFM is <strong>not a pure Transformer</strong> — it uses a hybrid architecture combining sparse MoE layers with gated convolution blocks. Current generation: <strong>LFM2.5</strong> (May 2026), featuring an 8B-A1B model with 128K context, strong agentic performance, and a ~5 GB Q4_K_M footprint. Proprietary lfm1.0 licence (free for most uses).</p>
+<p>Liquid AI's open-weight model family. Unlike every other model in this wiki, LFM is <strong>not a pure Transformer</strong> — it uses a hybrid architecture combining sparse MoE layers with gated convolution blocks. Current generation: <strong>LFM2.5</strong> (2026), featuring a text-only 8B-A1B (May 2026, 128K context, ~5 GB Q4_K_M) and two vision-language variants — VL-1.6B (Jan 2026) and VL-450M (Apr 2026, bounding box prediction, &lt;250ms on edge). Proprietary lfm1.0 licence (free for most uses).</p>
 <hr />
 <h2 id="lfm25-may-2026-current-generation">LFM2.5 (May 2026) — current generation<a class="headerlink" href="#lfm25-may-2026-current-generation" title="Permanent link">&para;</a></h2>
 <table>
@@ -2015,6 +2093,141 @@
 </tbody>
 </table>
 <p>Released May 28, 2026. Trained on 38 trillion tokens.</p>
+<hr />
+<h2 id="lfm25-vision-language-variants">LFM2.5 Vision-Language variants<a class="headerlink" href="#lfm25-vision-language-variants" title="Permanent link">&para;</a></h2>
+<p>Two dedicated VLMs alongside the text-only 8B-A1B — purpose-built with a SigLIP2 vision encoder paired to a smaller LFM2.5 language backbone, rather than a multimodal extension of the 8B.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>LM backbone</th>
+<th>Vision encoder</th>
+<th>Context</th>
+<th>Formats</th>
+<th>Released</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LFM2.5-VL-1.6B</td>
+<td>LFM2.5-1.2B</td>
+<td>SigLIP2 NaFlex 400M</td>
+<td>32K</td>
+<td>GGUF / ONNX / MLX</td>
+<td>Jan 2026</td>
+</tr>
+<tr>
+<td>LFM2.5-VL-450M</td>
+<td>LFM2.5-350M</td>
+<td>SigLIP2 Base 86M</td>
+<td>32K</td>
+<td>GGUF</td>
+<td>Apr 2026</td>
+</tr>
+</tbody>
+</table>
+<p>Both handle 512×512 images natively; larger images are tiled into non-overlapping 512×512 patches. Both support multilingual vision (Arabic, Chinese, French, German, Japanese, Korean, Spanish).</p>
+<h3 id="lfm25-vl-16b">LFM2.5-VL-1.6B<a class="headerlink" href="#lfm25-vl-16b" title="Permanent link">&para;</a></h3>
+<p>Focuses on document understanding, high-resolution OCR, and multi-image reasoning.</p>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RealWorldQA</td>
+<td>64.84</td>
+</tr>
+<tr>
+<td>MMStar</td>
+<td>50.67</td>
+</tr>
+<tr>
+<td>MM-IFEval</td>
+<td>52.29</td>
+</tr>
+<tr>
+<td>OCRBench</td>
+<td>41.44</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoModelForImageTextToText</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForImageTextToText</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="s2">&quot;LiquidAI/LFM2.5-VL-1.6B&quot;</span><span class="p">,</span> <span class="n">device_map</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;bfloat16&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">)</span>
+</code></pre></div>
+<p>Supported runtimes: HF Transformers (≥5.1), vLLM, llama.cpp, SGLang, ONNX, MLX.</p>
+<h3 id="lfm25-vl-450m">LFM2.5-VL-450M<a class="headerlink" href="#lfm25-vl-450m" title="Permanent link">&para;</a></h3>
+<p>Smaller edge variant. Adds <strong>bounding box prediction</strong> (grounded visual understanding) and function calling. Sub-250ms on Jetson Orin.</p>
+<p><strong>Edge latency (Q4_0, inference):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Resolution</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVIDIA Jetson Orin</td>
+<td>512×512</td>
+<td>242 ms</td>
+</tr>
+<tr>
+<td>Samsung S25 Ultra</td>
+<td>256×256</td>
+<td>950 ms</td>
+</tr>
+<tr>
+<td>AMD Ryzen AI Max+ 395</td>
+<td>512×512</td>
+<td>944 ms</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Benchmarks vs predecessor LFM2-VL-450M:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>LFM2</th>
+<th>LFM2.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RefCOCO-M (bounding box)</td>
+<td>0</td>
+<td><strong>81.28</strong></td>
+</tr>
+<tr>
+<td>MMMB (multilingual vision)</td>
+<td>54.29</td>
+<td>68.09</td>
+</tr>
+<tr>
+<td>IFEval</td>
+<td>51.75</td>
+<td>61.16</td>
+</tr>
+<tr>
+<td>MMBench</td>
+<td>—</td>
+<td>60.91</td>
+</tr>
+<tr>
+<td>OCRBench</td>
+<td>—</td>
+<td>684</td>
+</tr>
+</tbody>
+</table>
+<p><strong>GGUF</strong>: <code>LiquidAI/LFM2.5-VL-450M-GGUF</code> on HuggingFace.</p>
 <hr />
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
 <p>LFM2.5 is a <strong>hybrid sparse model</strong>, not a decoder-only Transformer. Each forward pass routes through 24 layers split into two types:</p>
@@ -2158,11 +2371,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Ollama</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ollama<span class="w"> </span>pull<span class="w"> </span>lfm2.5:8b
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># llama.cpp / direct download</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># huggingface.co/LiquidAI/LFM2.5-8B-A1B-GGUF</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Ollama</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ollama<span class="w"> </span>pull<span class="w"> </span>lfm2.5:8b
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># llama.cpp / direct download</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># huggingface.co/LiquidAI/LFM2.5-8B-A1B-GGUF</span>
 </code></pre></div>
 <hr />
 <h2 id="generation-history">Generation history<a class="headerlink" href="#generation-history" title="Permanent link">&para;</a></h2>
