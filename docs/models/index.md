@@ -15,6 +15,7 @@ Overview of the major open-weight model families for local inference.
 | [Holo](holo.md) | H Company | Apache 2.0 | VLM for computer-use agents; 0.8B–35B-A3B; OSWorld 74.2% |
 | [Mellum](mellum.md) | JetBrains | Apache 2.0 | Coding MoE 12B/2.5B active, 128K ctx; 2× faster inference; ~6–7 GB Q4 |
 | [Nemotron](nemotron.md) | NVIDIA | OpenMDW-1.1 | Hybrid Mamba-Transformer MoE; Nano 30B-A3B / Super 120B-A12B / Ultra 550B-A55B; 1M ctx |
+| [North Mini Code](north-mini-code.md) | Cohere Labs | Apache 2.0 | Agentic coding MoE 30B/3B active, 256K ctx; 80%+ SWE-Bench pass@10 |
 
 ## Specialized models
 
