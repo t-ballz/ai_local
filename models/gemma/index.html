@@ -789,6 +789,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#diffusiongemma-june-10-2026-discrete-diffusion-variant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DiffusionGemma (June 10, 2026) — discrete diffusion variant
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DiffusionGemma (June 10, 2026) — discrete diffusion variant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throughput-vs-autoregressive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Throughput vs autoregressive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specs-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specs &amp; formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#strengths-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1930,6 +1980,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#diffusiongemma-june-10-2026-discrete-diffusion-variant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DiffusionGemma (June 10, 2026) — discrete diffusion variant
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DiffusionGemma (June 10, 2026) — discrete diffusion variant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throughput-vs-autoregressive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Throughput vs autoregressive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specs-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specs &amp; formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#strengths-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1973,7 +2073,7 @@
 <p>Source: <a href="https://ai.google.dev/gemma/docs/core">ai.google.dev/gemma</a> · <a href="https://github.com/google-deepmind/gemma">github.com/google-deepmind/gemma</a> · <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/">Gemma 4 blog</a> · <a href="https://huggingface.co/blog/gemma4">HuggingFace Gemma 4</a></p>
 </blockquote>
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
-<p>Google DeepMind's open-weight family. Gemma 3 (March 2025) brought 128K context and multimodal (text + images) to small models. Gemma 4 (April–June 2026) adds MoE, video understanding, and a massive coding improvement. A new <strong>12B dense</strong> variant (June 3, 2026) fills the gap between the edge models and the 26B MoE with full audio+video+image support and 256K context at ~6.5 GB Q4. Apache 2.0 licence.</p>
+<p>Google DeepMind's open-weight family. Gemma 3 (March 2025) brought 128K context and multimodal (text + images) to small models. Gemma 4 (April–June 2026) adds MoE, video understanding, and a massive coding improvement. A new <strong>12B dense</strong> variant (June 3, 2026) fills the gap between the edge models and the 26B MoE with full audio+video+image support and 256K context at ~6.5 GB Q4. <strong>DiffusionGemma</strong> (June 10, 2026) is an experimental discrete diffusion variant on the 26B-A4B backbone — 5–6× throughput via parallel block generation, vLLM only. Apache 2.0 licence.</p>
 <hr />
 <h2 id="gemma-3-march-2025-dense-multimodal">Gemma 3 (March 2025) — dense, multimodal<a class="headerlink" href="#gemma-3-march-2025-dense-multimodal" title="Permanent link">&para;</a></h2>
 <table>
@@ -2174,6 +2274,116 @@
 </table>
 <p>The mobile-optimized format cuts E2B (text-only, without Per-Layer Embeddings) below 1 GB, targeting on-device deployment on phones and laptops.</p>
 <p><strong>Available via</strong>: Ollama, llama.cpp (GGUF Q4_0 QAT checkpoints on HuggingFace/Unsloth), vLLM.</p>
+<hr />
+<h2 id="diffusiongemma-june-10-2026-discrete-diffusion-variant">DiffusionGemma (June 10, 2026) — discrete diffusion variant<a class="headerlink" href="#diffusiongemma-june-10-2026-discrete-diffusion-variant" title="Permanent link">&para;</a></h2>
+<p>An experimental <strong>diffusion LLM (dLLM)</strong> built on the Gemma 4 26B-A4B backbone. Instead of generating tokens one at a time (autoregressive), it iteratively denoises a fixed-length canvas of 256 tokens in parallel — achieving 5–6× higher throughput at the cost of a fundamentally different inference pipeline.</p>
+<blockquote>
+<p>Source: <a href="https://deepmind.google/models/gemma/diffusiongemma/">DeepMind page</a> · <a href="https://vllm-project.github.io/2026/06/10/diffusion-gemma">vLLM blog</a> · <a href="https://huggingface.co/google/diffusiongemma-26B-A4B-it">HuggingFace: google/diffusiongemma-26B-A4B-it</a></p>
+</blockquote>
+<h3 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<p>The same Gemma 4 26B-A4B weights operate in two modes:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Attention</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Encoder (causal)</td>
+<td>Left-to-right only</td>
+<td>Prefill prompt; commit completed blocks</td>
+</tr>
+<tr>
+<td>Decoder (bidirectional)</td>
+<td>All tokens attend to each other</td>
+<td>Iterative denoising of the 256-token canvas</td>
+</tr>
+</tbody>
+</table>
+<p>Generation proceeds left-to-right across 256-token blocks. Within each block, all positions denoise simultaneously using <strong>entropy-bound denoising</strong>: tokens with low-entropy (high-confidence) predictions are committed; uncertain positions are resampled. A block is accepted when argmax predictions stabilise and mean per-token entropy falls below a threshold — or a hard step limit is hit.</p>
+<h3 id="throughput-vs-autoregressive">Throughput vs autoregressive<a class="headerlink" href="#throughput-vs-autoregressive" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Hardware</th>
+<th>Tokens/sec (FP8)</th>
+<th>vs autoregressive</th>
+<th>vs MTP baseline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H200</td>
+<td>1,288</td>
+<td>~6×</td>
+<td>~3×</td>
+</tr>
+<tr>
+<td>H100</td>
+<td>1,008</td>
+<td>~5×</td>
+<td>~2.6×</td>
+</tr>
+</tbody>
+</table>
+<h3 id="specs-formats">Specs &amp; formats<a class="headerlink" href="#specs-formats" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Architecture</td>
+<td>Gemma 4 26B-A4B MoE (3.8B active / 26B total)</td>
+</tr>
+<tr>
+<td>Block size</td>
+<td>256 tokens</td>
+</tr>
+<tr>
+<td>Input modalities</td>
+<td>Text + image + video</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>Text only</td>
+</tr>
+<tr>
+<td>Formats</td>
+<td>FP8 (dynamic activations), NVFP4 (Blackwell only)</td>
+</tr>
+<tr>
+<td>GGUF</td>
+<td>Not available</td>
+</tr>
+<tr>
+<td>VRAM</td>
+<td>~18–24 GB quantized (FP8); NVFP4 on RTX 5090/H100</td>
+</tr>
+<tr>
+<td>Inference</td>
+<td>vLLM (native dLLM support); RedHatAI hub quantizations</td>
+</tr>
+<tr>
+<td>Licence</td>
+<td>Apache 2.0</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Not autoregressive — different inference stack</p>
+<p>DiffusionGemma cannot be run with llama.cpp or Ollama. It requires vLLM with native diffusion LLM support. GGUF is not available and is architecturally incompatible with the diffusion decoding loop.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Quality vs speed trade-off</p>
+<p>The throughput gain comes from parallel block decoding, not quality gains. Quality is roughly on par with the autoregressive Gemma 4 26B-A4B — the point is throughput for high-concurrency serving.</p>
+</div>
 <hr />
 <h2 id="strengths-use-cases">Strengths &amp; use cases<a class="headerlink" href="#strengths-use-cases" title="Permanent link">&para;</a></h2>
 <table>
