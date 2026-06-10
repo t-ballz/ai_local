@@ -4,7 +4,7 @@
 
 ## TL;DR
 
-Google DeepMind's open-weight family. Gemma 3 (March 2025) brought 128K context and multimodal (text + images) to small models. Gemma 4 (April–June 2026) adds MoE, video understanding, and a massive coding improvement. A new **12B dense** variant (June 3, 2026) fills the gap between the edge models and the 26B MoE with full audio+video+image support and 256K context at ~6.5 GB Q4. Apache 2.0 licence.
+Google DeepMind's open-weight family. Gemma 3 (March 2025) brought 128K context and multimodal (text + images) to small models. Gemma 4 (April–June 2026) adds MoE, video understanding, and a massive coding improvement. A new **12B dense** variant (June 3, 2026) fills the gap between the edge models and the 26B MoE with full audio+video+image support and 256K context at ~6.5 GB Q4. **DiffusionGemma** (June 10, 2026) is an experimental discrete diffusion variant on the 26B-A4B backbone — 5–6× throughput via parallel block generation, vLLM only. Apache 2.0 licence.
 
 ---
 
@@ -67,6 +67,52 @@ Google released QAT checkpoints for all five Gemma 4 sizes on June 5, 2026. Unli
 The mobile-optimized format cuts E2B (text-only, without Per-Layer Embeddings) below 1 GB, targeting on-device deployment on phones and laptops.
 
 **Available via**: Ollama, llama.cpp (GGUF Q4_0 QAT checkpoints on HuggingFace/Unsloth), vLLM.
+
+---
+
+## DiffusionGemma (June 10, 2026) — discrete diffusion variant
+
+An experimental **diffusion LLM (dLLM)** built on the Gemma 4 26B-A4B backbone. Instead of generating tokens one at a time (autoregressive), it iteratively denoises a fixed-length canvas of 256 tokens in parallel — achieving 5–6× higher throughput at the cost of a fundamentally different inference pipeline.
+
+> Source: [DeepMind page](https://deepmind.google/models/gemma/diffusiongemma/) · [vLLM blog](https://vllm-project.github.io/2026/06/10/diffusion-gemma) · [HuggingFace: google/diffusiongemma-26B-A4B-it](https://huggingface.co/google/diffusiongemma-26B-A4B-it)
+
+### How it works
+
+The same Gemma 4 26B-A4B weights operate in two modes:
+
+| Mode | Attention | Purpose |
+|------|-----------|---------|
+| Encoder (causal) | Left-to-right only | Prefill prompt; commit completed blocks |
+| Decoder (bidirectional) | All tokens attend to each other | Iterative denoising of the 256-token canvas |
+
+Generation proceeds left-to-right across 256-token blocks. Within each block, all positions denoise simultaneously using **entropy-bound denoising**: tokens with low-entropy (high-confidence) predictions are committed; uncertain positions are resampled. A block is accepted when argmax predictions stabilise and mean per-token entropy falls below a threshold — or a hard step limit is hit.
+
+### Throughput vs autoregressive
+
+| Hardware | Tokens/sec (FP8) | vs autoregressive | vs MTP baseline |
+|----------|-----------------|------------------|----------------|
+| H200 | 1,288 | ~6× | ~3× |
+| H100 | 1,008 | ~5× | ~2.6× |
+
+### Specs & formats
+
+| Property | Value |
+|----------|-------|
+| Architecture | Gemma 4 26B-A4B MoE (3.8B active / 26B total) |
+| Block size | 256 tokens |
+| Input modalities | Text + image + video |
+| Output | Text only |
+| Formats | FP8 (dynamic activations), NVFP4 (Blackwell only) |
+| GGUF | Not available |
+| VRAM | ~18–24 GB quantized (FP8); NVFP4 on RTX 5090/H100 |
+| Inference | vLLM (native dLLM support); RedHatAI hub quantizations |
+| Licence | Apache 2.0 |
+
+!!! warning "Not autoregressive — different inference stack"
+    DiffusionGemma cannot be run with llama.cpp or Ollama. It requires vLLM with native diffusion LLM support. GGUF is not available and is architecturally incompatible with the diffusion decoding loop.
+
+!!! note "Quality vs speed trade-off"
+    The throughput gain comes from parallel block decoding, not quality gains. Quality is roughly on par with the autoregressive Gemma 4 26B-A4B — the point is throughput for high-concurrency serving.
 
 ---
 
