@@ -4,7 +4,7 @@
 
 ## TL;DR
 
-Google DeepMind's open-weight family. Gemma 3 (March 2025) brought 128K context and multimodal (text + images) to small models. Gemma 4 (April–June 2026) adds MoE, video understanding, and a massive coding improvement. A new **12B dense** variant (June 3, 2026) fills the gap between the edge models and the 26B MoE with full audio+video+image support and 256K context at ~6.5 GB Q4. **DiffusionGemma** (June 10, 2026) is an experimental discrete diffusion variant on the 26B-A4B backbone — 5–6× throughput via parallel block generation, vLLM only. Apache 2.0 licence.
+Google DeepMind's open-weight family. Gemma 3 (March 2025) brought 128K context and multimodal (text + images) to small models. Gemma 4 (April–June 2026) adds MoE, video understanding, and a massive coding improvement. A new **12B dense** variant (June 3, 2026) fills the gap between the edge models and the 26B MoE with full audio+video+image support and 256K context at ~6.5 GB Q4. **MTP drafters** (May 5) bring 1.7–3× speculative decoding speedup to E2B/E4B/26B/31B (llama.cpp `--mtp-head`, Ollama, vLLM). **DiffusionGemma** (June 10) is an experimental discrete diffusion variant on the 26B-A4B backbone — 5–6× throughput via parallel block generation, vLLM only. Apache 2.0 licence.
 
 ---
 
@@ -49,6 +49,29 @@ All Gemma 4 models support **text + images + video**. E2B, E4B, and **12B** addi
 | 31B | 85.2% | 80.0% | — | #3 open model |
 | 26B-A4B | 82.6% | — | — | #6 open model |
 | **12B** | **77.2%** | **72.0%** | **78.8%** | — |
+
+---
+
+## Gemma 4 MTP drafters (May 5, 2026) — speculative decoding
+
+Google shipped small **Multi-Token Prediction drafter** models for four Gemma 4 variants. These are used for speculative decoding: the lightweight drafter predicts several tokens ahead while the target model verifies them in parallel — identical outputs, faster wall-clock time.
+
+| Target model | Drafter size | Speedup (claimed) | Speedup (real-world) |
+|-------------|-------------|------------------|---------------------|
+| E2B / E4B | ~79M | up to 3× | 1.7–2.2× |
+| 26B-A4B | — | up to 3× | 1.7–2.2× |
+| 31B | ~0.5B | up to 3× | 1.7–2.2× |
+
+Drafters share the target model's KV cache — no redundant context recomputation.
+
+**Supported frameworks**: HF Transformers, MLX, vLLM, SGLang, Ollama.
+
+**llama.cpp**: support merged June 7, 2026. Load via `--mtp-head <drafter.gguf>`.
+
+GGUF drafters available on HuggingFace (AtomicChat, Unsloth). Apache 2.0.
+
+!!! tip "MTP + QAT"
+    MTP drafters work alongside QAT checkpoints — load the QAT quantized target with its matching drafter for both the memory savings of QAT and the speed of speculative decoding.
 
 ---
 
