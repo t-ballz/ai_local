@@ -778,6 +778,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gemma-4-mtp-drafters-may-5-2026-speculative-decoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemma 4 MTP drafters (May 5, 2026) — speculative decoding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gemma-4-qat-june-5-2026-quantization-aware-training-checkpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1969,6 +1980,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gemma-4-mtp-drafters-may-5-2026-speculative-decoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemma 4 MTP drafters (May 5, 2026) — speculative decoding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gemma-4-qat-june-5-2026-quantization-aware-training-checkpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2073,7 +2095,7 @@
 <p>Source: <a href="https://ai.google.dev/gemma/docs/core">ai.google.dev/gemma</a> · <a href="https://github.com/google-deepmind/gemma">github.com/google-deepmind/gemma</a> · <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/">Gemma 4 blog</a> · <a href="https://huggingface.co/blog/gemma4">HuggingFace Gemma 4</a></p>
 </blockquote>
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
-<p>Google DeepMind's open-weight family. Gemma 3 (March 2025) brought 128K context and multimodal (text + images) to small models. Gemma 4 (April–June 2026) adds MoE, video understanding, and a massive coding improvement. A new <strong>12B dense</strong> variant (June 3, 2026) fills the gap between the edge models and the 26B MoE with full audio+video+image support and 256K context at ~6.5 GB Q4. <strong>DiffusionGemma</strong> (June 10, 2026) is an experimental discrete diffusion variant on the 26B-A4B backbone — 5–6× throughput via parallel block generation, vLLM only. Apache 2.0 licence.</p>
+<p>Google DeepMind's open-weight family. Gemma 3 (March 2025) brought 128K context and multimodal (text + images) to small models. Gemma 4 (April–June 2026) adds MoE, video understanding, and a massive coding improvement. A new <strong>12B dense</strong> variant (June 3, 2026) fills the gap between the edge models and the 26B MoE with full audio+video+image support and 256K context at ~6.5 GB Q4. <strong>MTP drafters</strong> (May 5) bring 1.7–3× speculative decoding speedup to E2B/E4B/26B/31B (llama.cpp <code>--mtp-head</code>, Ollama, vLLM). <strong>DiffusionGemma</strong> (June 10) is an experimental discrete diffusion variant on the 26B-A4B backbone — 5–6× throughput via parallel block generation, vLLM only. Apache 2.0 licence.</p>
 <hr />
 <h2 id="gemma-3-march-2025-dense-multimodal">Gemma 3 (March 2025) — dense, multimodal<a class="headerlink" href="#gemma-3-march-2025-dense-multimodal" title="Permanent link">&para;</a></h2>
 <table>
@@ -2227,6 +2249,47 @@
 </tr>
 </tbody>
 </table>
+<hr />
+<h2 id="gemma-4-mtp-drafters-may-5-2026-speculative-decoding">Gemma 4 MTP drafters (May 5, 2026) — speculative decoding<a class="headerlink" href="#gemma-4-mtp-drafters-may-5-2026-speculative-decoding" title="Permanent link">&para;</a></h2>
+<p>Google shipped small <strong>Multi-Token Prediction drafter</strong> models for four Gemma 4 variants. These are used for speculative decoding: the lightweight drafter predicts several tokens ahead while the target model verifies them in parallel — identical outputs, faster wall-clock time.</p>
+<table>
+<thead>
+<tr>
+<th>Target model</th>
+<th>Drafter size</th>
+<th>Speedup (claimed)</th>
+<th>Speedup (real-world)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E2B / E4B</td>
+<td>~79M</td>
+<td>up to 3×</td>
+<td>1.7–2.2×</td>
+</tr>
+<tr>
+<td>26B-A4B</td>
+<td>—</td>
+<td>up to 3×</td>
+<td>1.7–2.2×</td>
+</tr>
+<tr>
+<td>31B</td>
+<td>~0.5B</td>
+<td>up to 3×</td>
+<td>1.7–2.2×</td>
+</tr>
+</tbody>
+</table>
+<p>Drafters share the target model's KV cache — no redundant context recomputation.</p>
+<p><strong>Supported frameworks</strong>: HF Transformers, MLX, vLLM, SGLang, Ollama.</p>
+<p><strong>llama.cpp</strong>: support merged June 7, 2026. Load via <code>--mtp-head &lt;drafter.gguf&gt;</code>.</p>
+<p>GGUF drafters available on HuggingFace (AtomicChat, Unsloth). Apache 2.0.</p>
+<div class="admonition tip">
+<p class="admonition-title">MTP + QAT</p>
+<p>MTP drafters work alongside QAT checkpoints — load the QAT quantized target with its matching drafter for both the memory savings of QAT and the speed of speculative decoding.</p>
+</div>
 <hr />
 <h2 id="gemma-4-qat-june-5-2026-quantization-aware-training-checkpoints">Gemma 4 QAT (June 5, 2026) — quantization-aware training checkpoints<a class="headerlink" href="#gemma-4-qat-june-5-2026-quantization-aware-training-checkpoints" title="Permanent link">&para;</a></h2>
 <p>Google released QAT checkpoints for all five Gemma 4 sizes on June 5, 2026. Unlike post-training quantization (PTQ), QAT simulates 4-bit arithmetic during training so the model learns to compensate for the precision loss — resulting in much smaller models with minimal quality degradation.</p>
