@@ -73,6 +73,10 @@ nav:
     - Dive into Claude Code: research/dive-into-claude-code.md
     - Recursive Language Models: research/recursive-language-models.md
     - Dataset Policy Gradient (DPG): research/dataset-policy-gradient.md
+    - Graph Memory for Agents (MRAgent): research/graph-memory-agents.md
+    - HarnessX (Evolvable Harnesses): research/harnessx.md
+    - PoLar (Program-of-Layers): research/polar-program-of-layers.md
+    - SeeRepo (Visual Code Graphs): research/seerepo.md
   - Tools:
     - Overview: tools/index.md
     - UI Tools:
