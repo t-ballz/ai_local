@@ -65,6 +65,7 @@ nav:
   - Research:
     - Overview: research/index.md
     - SGS Self-Play: research/sgs-self-play.md
+    - Dive into Claude Code: research/dive-into-claude-code.md
   - Tools:
     - Overview: tools/index.md
     - UI Tools:
