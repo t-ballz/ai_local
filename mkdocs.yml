@@ -77,6 +77,9 @@ nav:
     - HarnessX (Evolvable Harnesses): research/harnessx.md
     - PoLar (Program-of-Layers): research/polar-program-of-layers.md
     - SeeRepo (Visual Code Graphs): research/seerepo.md
+    - From Chatbot to Digital Colleague: research/chatbot-to-digital-colleague.md
+    - From AGI to ASI: research/from-agi-to-asi.md
+    - S2L-PO (GRPO Diversity): research/s2l-po-grpo-diversity.md
   - Tools:
     - Overview: tools/index.md
     - UI Tools:

@@ -12,3 +12,6 @@ Papers and articles on AI/ML topics beyond local inference — training methods,
 | [HarnessX: Evolvable Agent Harnesses](harnessx.md) | Auto-adapting agent scaffolds via AEGIS pipeline; +14.5% avg, +5% with model co-evolution | Jun 2026 |
 | [PoLar: Program-of-Layers](polar-program-of-layers.md) | Per-input skip/repeat of layer segments; +3.8–5.8% accuracy, often with less compute | ICML 2026 |
 | [SeeRepo: Visual Dependency Graphs for Code Agents](seerepo.md) | Visual repo maps at fault-localization stage; −25% tokens, −26% cost on SWE-bench | Jun 2026 |
+| [From Chatbot to Digital Colleague](chatbot-to-digital-colleague.md) | Workspace + Skill paradigm as the decisive transition to persistent autonomous agents | Jun 2026 |
+| [From AGI to ASI](from-agi-to-asi.md) | Google DeepMind framework: four pathways, five bottlenecks, why forecasting AI progress is itself a field | Jun 2026 |
+| [S2L-PO: Smaller Models as Explorers in GRPO](s2l-po-grpo-diversity.md) | Frozen small-model rollouts for policy-level diversity; +8.8% AIME24 training an 8B with a 1.7B | 2025 |
