@@ -77,3 +77,5 @@ nav:
       - Claude Code Alternatives: tools/cli/claude-code-alternatives.md
     - RAG:
       - turbovec (Vector Search): tools/turbovec.md
+    - Code Intelligence:
+      - Understand Anything: tools/understand-anything.md
