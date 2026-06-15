@@ -65,6 +65,7 @@ nav:
   - Tips:
     - Overview: tips/index.md
     - Agentic AI Engineer Roadmap: tips/agentic-ai-engineer-roadmap.md
+    - Loop Engineering: tips/loop-engineering.md
   - Research:
     - Overview: research/index.md
     - SGS Self-Play: research/sgs-self-play.md
