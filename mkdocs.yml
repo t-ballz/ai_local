@@ -62,6 +62,9 @@ nav:
     - llama.cpp: inference/llama-cpp.md
     - LM Studio: inference/lm-studio.md
     - TurboQuant (KV Cache): inference/turboquant.md
+  - Tips:
+    - Overview: tips/index.md
+    - Agentic AI Engineer Roadmap: tips/agentic-ai-engineer-roadmap.md
   - Research:
     - Overview: research/index.md
     - SGS Self-Play: research/sgs-self-play.md
