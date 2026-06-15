@@ -70,6 +70,7 @@ nav:
     - SGS Self-Play: research/sgs-self-play.md
     - Dive into Claude Code: research/dive-into-claude-code.md
     - Recursive Language Models: research/recursive-language-models.md
+    - Dataset Policy Gradient (DPG): research/dataset-policy-gradient.md
   - Tools:
     - Overview: tools/index.md
     - UI Tools:

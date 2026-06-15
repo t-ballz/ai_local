@@ -7,3 +7,4 @@ Papers and articles on AI/ML topics beyond local inference — training methods,
 | [Scaling Self-Play with Self-Guidance (SGS)](sgs-self-play.md) | Synthetic data generation, theorem proving | Apr 2026 |
 | [Dive into Claude Code](dive-into-claude-code.md) | AI agent architecture, harness design patterns | Apr 2026 |
 | [Recursive Language Models (RLMs)](recursive-language-models.md) | Long-context via recursive REPL decomposition; no context rot | Dec 2025 |
+| [Synthetic Data for any Differentiable Target (DPG)](dataset-policy-gradient.md) | RL-optimised data generation; encodes QR codes into model weights via benign text | Apr 2026 |
