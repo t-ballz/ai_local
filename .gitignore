@@ -2,3 +2,7 @@ site/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Digest inbox: generated digests are ephemeral, not committed.
+# (inbox/digests/.gitignore is committed; the generated *.md files are not.)
+inbox/digests/*.md

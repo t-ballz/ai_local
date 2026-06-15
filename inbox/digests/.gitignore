@@ -1,0 +1,2 @@
+# Digests are ephemeral run output — not committed.
+*.md
