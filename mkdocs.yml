@@ -61,6 +61,9 @@ nav:
     - llama.cpp: inference/llama-cpp.md
     - LM Studio: inference/lm-studio.md
     - TurboQuant (KV Cache): inference/turboquant.md
+  - Research:
+    - Overview: research/index.md
+    - SGS Self-Play: research/sgs-self-play.md
   - Tools:
     - Overview: tools/index.md
     - UI Tools:
