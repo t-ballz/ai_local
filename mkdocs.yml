@@ -55,6 +55,7 @@ nav:
       - LocateAnything-3B: models/locate-anything.md
       - Ideogram 4.0: models/ideogram.md
       - Harness-1 (Search Agent): models/harness.md
+      - FastContext (Code Explorer): models/fastcontext.md
   - Inference:
     - Overview: inference/index.md
     - Ollama: inference/ollama.md

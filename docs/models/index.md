@@ -25,6 +25,7 @@ Overview of the major open-weight model families for local inference.
 | [LocateAnything-3B](locate-anything.md) | NVIDIA | Non-commercial | Visual grounding; bounding boxes from text queries |
 | [Ideogram 4.0](ideogram.md) | Ideogram | Gated | Text-to-image; native 2K, best-in-class text rendering |
 | [Harness-1](harness.md) | Patrick Jiang | Apache 2.0 | 20B search agent; 73% evidence recall; matches frontier model search at 20B |
+| [FastContext](fastcontext.md) | Microsoft | MIT | 4B repo-exploration subagent for coding agents; −10–60% main-agent tokens, +5.5 SWE-bench |
 
 ## Quick size guide
 
