@@ -19,9 +19,12 @@ LAST_SEEN = HERE / "last_seen.txt"
 FEED_URL = "https://simonwillison.net/atom/everything/"
 
 
+MAX_ITEMS = 15
+
+
 def main() -> int:
     dry_run = "--dry-run" in sys.argv[1:]
-    return feed.enumerate_feed(FEED_URL, LAST_SEEN, dry_run)
+    return feed.enumerate_feed(FEED_URL, LAST_SEEN, dry_run, max_items=MAX_ITEMS)
 
 
 if __name__ == "__main__":

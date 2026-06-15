@@ -19,6 +19,7 @@ from lib import http  # noqa: E402
 HERE = Path(__file__).resolve().parent
 LAST_SEEN = HERE / "last_seen.txt"
 LISTING = "https://www.reddit.com/r/LocalLLaMA/top.json?t=day&limit=25"
+MAX_ITEMS = 25
 
 
 def read_last_seen() -> float:
@@ -57,6 +58,15 @@ def main() -> int:
                 "url": url,
                 "snippet": snippet,
             }
+        )
+
+    if len(items) > MAX_ITEMS:
+        skipped = len(items) - MAX_ITEMS
+        items = items[:MAX_ITEMS]
+        print(
+            f"CAP_WARNING: showing {MAX_ITEMS} of {MAX_ITEMS + skipped} new items "
+            f"({skipped} more not shown — increase MAX_ITEMS or run again to advance pointer)",
+            file=sys.stderr,
         )
 
     sys.stdout.write(json.dumps(items) + "\n")

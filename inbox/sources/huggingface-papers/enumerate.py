@@ -21,6 +21,7 @@ from lib import http  # noqa: E402
 HERE = Path(__file__).resolve().parent
 LAST_SEEN = HERE / "last_seen.txt"
 BASE = "https://huggingface.co"
+MAX_ITEMS = 20
 
 
 def read_last_seen() -> datetime.date:
@@ -87,6 +88,15 @@ def main() -> int:
             if it["id"] not in seen_ids:
                 seen_ids.add(it["id"])
                 items.append(it)
+
+    if len(items) > MAX_ITEMS:
+        skipped = len(items) - MAX_ITEMS
+        items = items[:MAX_ITEMS]
+        print(
+            f"CAP_WARNING: showing {MAX_ITEMS} of {MAX_ITEMS + skipped} new items "
+            f"({skipped} more not shown — increase MAX_ITEMS or run again to advance pointer)",
+            file=sys.stderr,
+        )
 
     # Print first so a crash mid-write can't advance the pointer.
     sys.stdout.write(json.dumps(items) + "\n")

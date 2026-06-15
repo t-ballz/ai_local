@@ -43,8 +43,8 @@ def run(cmd: list[str], *, stdin: str | None = None, timeout: int = 120) -> subp
     )
 
 
-def enumerate_source(source_dir: Path, dry_run: bool) -> list[dict]:
-    """Run a source's enumerate.py and return the parsed item list."""
+def enumerate_source(source_dir: Path, dry_run: bool) -> tuple[list[dict], str | None]:
+    """Run a source's enumerate.py and return (items, cap_warning | None)."""
     script = source_dir / "enumerate.py"
     if not script.exists():
         raise FileNotFoundError(f"no enumerate.py in {source_dir.name}")
@@ -55,9 +55,13 @@ def enumerate_source(source_dir: Path, dry_run: bool) -> list[dict]:
     if proc.returncode != 0:
         raise RuntimeError(proc.stderr.strip() or f"enumerate.py exited {proc.returncode}")
     out = proc.stdout.strip()
-    if not out:
-        return []
-    return json.loads(out)
+    items = json.loads(out) if out else []
+    warning: str | None = None
+    for line in (proc.stderr or "").splitlines():
+        if line.startswith("CAP_WARNING:"):
+            warning = line[len("CAP_WARNING:"):].strip()
+            break
+    return items, warning
 
 
 def fetch_and_summarize(source_dir: Path, item_id: str) -> str:
@@ -111,12 +115,16 @@ def main() -> int:
         section_lines = [f"## {name}", ""]
 
         try:
-            items = enumerate_source(source_dir, dry_run)
+            items, cap_warning = enumerate_source(source_dir, dry_run)
         except Exception as exc:  # noqa: BLE001 - skip this source, keep going
             section_lines.append(f"_Error enumerating: {exc}_")
             section_lines.append("")
             sections.append("\n".join(section_lines))
             continue
+
+        if cap_warning:
+            section_lines.append(f"> ⚠ **Cap reached:** {cap_warning}")
+            section_lines.append("")
 
         # Merge manually-added pending Twitter items into that source.
         if name == "twitter-follows":

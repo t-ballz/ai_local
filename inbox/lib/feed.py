@@ -111,8 +111,12 @@ def _entries_stdlib(raw: bytes) -> list[dict]:
     return out
 
 
-def enumerate_feed(feed_url: str, last_seen_path: Path, dry_run: bool) -> int:
-    """Run the shared feed enumeration and write the JSON contract to stdout."""
+def enumerate_feed(feed_url: str, last_seen_path: Path, dry_run: bool, max_items: int = 0) -> int:
+    """Run the shared feed enumeration and write the JSON contract to stdout.
+
+    max_items: hard cap on returned items (0 = unlimited). If the cap is hit, a
+    warning is printed to stderr so the orchestrator can surface it in the digest.
+    """
     last_raw = last_seen_path.read_text().strip() if last_seen_path.exists() else ""
     last_dt = _parse_dt(last_raw)
 
@@ -139,6 +143,16 @@ def enumerate_feed(feed_url: str, last_seen_path: Path, dry_run: bool) -> int:
                 "url": e["url"],
                 "snippet": summary[:200],
             }
+        )
+
+    capped = max_items > 0 and len(items) > max_items
+    if capped:
+        skipped = len(items) - max_items
+        items = items[:max_items]
+        print(
+            f"CAP_WARNING: showing {max_items} of {max_items + skipped} new items "
+            f"({skipped} more not fetched — increase MAX_ITEMS or run again to advance pointer)",
+            file=sys.stderr,
         )
 
     sys.stdout.write(json.dumps(items) + "\n")
