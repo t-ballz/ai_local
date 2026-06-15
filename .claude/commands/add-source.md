@@ -78,11 +78,11 @@ extract the relevant fields (see `inbox/sources/reddit-localllama/fetch.py`).
 Run the new source end to end before finishing:
 
 ```bash
-python inbox/sources/<source-id>/enumerate.py --dry-run
+.venv/bin/python inbox/sources/<source-id>/enumerate.py --dry-run
 ```
 
 Confirm it prints a valid JSON array. If items come back, pick one id and run
-`python inbox/sources/<source-id>/fetch.py <id>` to confirm it returns text.
+`.venv/bin/python inbox/sources/<source-id>/fetch.py <id>` to confirm it returns text.
 
 The new source is picked up automatically by `inbox/run_digest.py` (it globs
 `inbox/sources/*/`). No registration needed.

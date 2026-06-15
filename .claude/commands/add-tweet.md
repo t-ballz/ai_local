@@ -17,13 +17,13 @@ bare tweet ID. `fetch.py` extracts the ID itself, so pass the argument through.
 1. Fetch the tweet:
 
    ```bash
-   python inbox/sources/twitter-follows/fetch.py "<url-or-id>"
+   .venv/bin/python inbox/sources/twitter-follows/fetch.py "<url-or-id>"
    ```
 
 2. Summarize it (pipe the fetched content into the shared summarizer):
 
    ```bash
-   python inbox/sources/twitter-follows/fetch.py "<url-or-id>" | python inbox/lib/summarize.py
+   .venv/bin/python inbox/sources/twitter-follows/fetch.py "<url-or-id>" | python inbox/lib/summarize.py
    ```
 
 3. Show the user the tweet author/text, the 2-3 sentence summary, and the

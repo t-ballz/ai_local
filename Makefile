@@ -1,13 +1,19 @@
-.PHONY: install serve build deploy
+.PHONY: install serve build deploy digest
+
+PYTHON := .venv/bin/python
 
 install:
-	pip install mkdocs-material
+	python3 -m venv .venv
+	.venv/bin/pip install -r requirements.txt
 
 serve:
-	mkdocs serve
+	.venv/bin/mkdocs serve
 
 build:
-	mkdocs build --strict
+	.venv/bin/mkdocs build --strict
 
 deploy:
-	mkdocs gh-deploy --force
+	.venv/bin/mkdocs gh-deploy --force
+
+digest:
+	$(PYTHON) inbox/run_digest.py

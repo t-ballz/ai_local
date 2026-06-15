@@ -9,7 +9,7 @@ Twitter items).
 1. Run the digest orchestrator:
 
    ```bash
-   python inbox/run_digest.py
+   .venv/bin/python inbox/run_digest.py
    ```
 
    This enumerates every source under `inbox/sources/*/`, fetches and
@@ -19,10 +19,7 @@ Twitter items).
    items new since this run.
 
    - If you only want a preview without advancing the pointers, run
-     `python inbox/run_digest.py --dry-run` instead.
-   - If `ANTHROPIC_API_KEY` is not set, summaries fall back to a placeholder but
-     the digest still lists every item — mention this to the user if you see the
-     fallback text.
+     `.venv/bin/python inbox/run_digest.py --dry-run` instead.
 
 2. Read the written digest file (`inbox/digests/<today>.md`) to confirm the
    contents.
