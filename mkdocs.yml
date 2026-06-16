@@ -52,6 +52,7 @@ nav:
     - North Mini Code: models/north-mini-code.md
     - Nex N2: models/nex-n2.md
     - Specialized:
+      - Qwen3 Embedding & Reranker: models/qwen3-embedding.md
       - Miso One (TTS): models/miso.md
       - LocateAnything-3B: models/locate-anything.md
       - Ideogram 4.0: models/ideogram.md
