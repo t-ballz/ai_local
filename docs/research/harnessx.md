@@ -88,6 +88,24 @@ Co-evolution bonus: **+4.3% – +5.0%** additional gain over harness evolution a
 
 ---
 
+## The RL framing
+
+Once you see harness evolution as optimisation, the mapping to reinforcement learning is exact:
+
+| RL concept | HarnessX equivalent |
+|-----------|---------------------|
+| State | The current harness version |
+| Action | An AEGIS-proposed edit |
+| Reward signal | Execution trace + benchmark score |
+| Policy update | New harness version (gated) |
+| Failure modes | Reward hacking, catastrophic forgetting, under-exploration |
+
+This framing is not just aesthetic — it explains why the same failure modes that break model RL training show up when a system edits its own scaffolding, and why AEGIS's four stages map directly onto the defences RL practitioners already use (held-out eval, threshold gating, diverse exploration).
+
+The result that matters: **weaker models benefit most.** An evolved harness closes gaps a weak model cannot fix in its weights. The weights never change — the environment around them gets smarter.
+
+---
+
 ## Relation to other work
 
 HarnessX extends the Loop Engineering pattern (see [Loop Engineering](../tips/loop-engineering.md)) — specifically, it automates the *evolver* and *verifier* roles that Karpathy's AutoResearch pattern suggests should be human-designed. The creator/verifier split maps directly onto AEGIS's Evolver/Critic stages.

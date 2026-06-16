@@ -108,6 +108,22 @@ print(rlm.completion("Your very long prompt here").response)
 
 ---
 
+## Follow-up: RL-trained RLMs (May 2026)
+
+> Source: [alphaXiv blog](https://www.alphaxiv.org/blog/reinforcement-learning-for-rlms) · Daniel Kim, Rehaan Ahmad · May 2026
+
+The original RLM paper used prompting and SFT to elicit recursive behaviour. A follow-up shows that **RL fine-tuning unlocks RLM behaviour that neither prompting nor SFT can reach** in small models.
+
+**Setup**: A single 4B model is trained under a shared policy to play *both* the parent (decomposer) and child (sub-agent) roles, rather than using separate models per level.
+
+**Task**: Evidence selection — given a question and a set of arXiv papers, return the snippets that answer the question. The task requires multi-document long-context reasoning.
+
+**Result**: The RL-trained 4B RLM **matches Sonnet 4.6** in evidence selection quality, using the same RLM harness and REPL environment, at a fraction of the size and cost.
+
+The key finding: RLM behaviour is a *learned policy*, not just a prompting strategy. Small models can acquire it through RL, but not through instruction following alone. Code available on [SkyRL](https://github.com/NovaSky-AI/SkyRL).
+
+---
+
 ## Limitations
 
 - **Synchronous only** — no async; individual queries can take seconds to minutes

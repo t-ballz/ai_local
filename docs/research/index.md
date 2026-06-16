@@ -20,3 +20,5 @@ Papers and articles on AI/ML topics beyond local inference — training methods,
 | [FlashMemory-DeepSeek-V4: Lookahead Sparse Attention](flashmemory-deepseek-v4.md) | Proactive KV cache prediction compresses cache to 13.5% at 500K context; +0.6% accuracy | Jun 2026 |
 | [Attention Amnesia in Hybrid LLMs](attention-amnesia-hybrid-llms.md) | CoT-SFT destroys long-context recall (67% → 9%) in hybrid models; QK-Restore fixes it without retraining | Jun 2026 |
 | [N-GRPO: Semantic Neighbor Mixing](n-grpo.md) | Manifold-constrained embedding diversity for GRPO; no second model needed; consistent math reasoning gains | Jun 2026 |
+| [NextLat: Next-Latent Prediction](nextlat.md) | Auxiliary latent-state prediction injects world-model bias into transformers; 3.3× self-speculative decoding speedup | Nov 2025 |
+| [Agentic Automata Learning](agentic-automata-learning.md) | Agents reconstruct hidden DFAs via membership/equivalence queries; clean benchmark for world-model claims | Jun 2026 |

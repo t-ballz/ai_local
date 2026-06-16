@@ -87,6 +87,8 @@ nav:
     - FlashMemory-DeepSeek-V4 (Lookahead Sparse Attn): research/flashmemory-deepseek-v4.md
     - Attention Amnesia in Hybrid LLMs: research/attention-amnesia-hybrid-llms.md
     - N-GRPO (Semantic Neighbor Mixing): research/n-grpo.md
+    - NextLat (Next-Latent Prediction): research/nextlat.md
+    - Agentic Automata Learning: research/agentic-automata-learning.md
   - Software Thoughts:
     - Overview: software-thoughts/index.md
     - Every System is a Log: software-thoughts/every-system-is-a-log.md
