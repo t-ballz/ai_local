@@ -80,6 +80,9 @@ nav:
     - From Chatbot to Digital Colleague: research/chatbot-to-digital-colleague.md
     - From AGI to ASI: research/from-agi-to-asi.md
     - S2L-PO (GRPO Diversity): research/s2l-po-grpo-diversity.md
+  - Software Thoughts:
+    - Overview: software-thoughts/index.md
+    - Every System is a Log: software-thoughts/every-system-is-a-log.md
   - Tools:
     - Overview: tools/index.md
     - UI Tools:
