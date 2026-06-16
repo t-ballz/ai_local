@@ -16,3 +16,7 @@ Papers and articles on AI/ML topics beyond local inference — training methods,
 | [From AGI to ASI](from-agi-to-asi.md) | Google DeepMind framework: four pathways, five bottlenecks, why forecasting AI progress is itself a field | Jun 2026 |
 | [S2L-PO: Smaller Models as Explorers in GRPO](s2l-po-grpo-diversity.md) | Frozen small-model rollouts for policy-level diversity; +8.8% AIME24 training an 8B with a 1.7B | 2025 |
 | [VibeThinker-3B: Frontier Reasoning at 3B](vibethinker-3b.md) | 94.3 AIME26 / 80.2 LiveCodeBench from a 3B model via curriculum SFT + RL + self-distillation | Jun 2026 |
+| [MiniMax Sparse Attention](minimax-sparse-attention.md) | 28.4× fewer attention ops at 1M context; 14.2× prefill speedup; ships in MiniMax-M3 (109B) | Jun 2026 |
+| [FlashMemory-DeepSeek-V4: Lookahead Sparse Attention](flashmemory-deepseek-v4.md) | Proactive KV cache prediction compresses cache to 13.5% at 500K context; +0.6% accuracy | Jun 2026 |
+| [Attention Amnesia in Hybrid LLMs](attention-amnesia-hybrid-llms.md) | CoT-SFT destroys long-context recall (67% → 9%) in hybrid models; QK-Restore fixes it without retraining | Jun 2026 |
+| [N-GRPO: Semantic Neighbor Mixing](n-grpo.md) | Manifold-constrained embedding diversity for GRPO; no second model needed; consistent math reasoning gains | Jun 2026 |
