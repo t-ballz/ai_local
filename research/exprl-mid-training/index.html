@@ -11,24 +11,28 @@
       
       
       
+        <link rel="prev" href="../agentic-automata-learning/">
+      
+      
+        <link rel="next" href="../../software-thoughts/">
       
       
         
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>AI Local — Personal Knowledge Base</title>
+        <title>ExpRL (Dense RL for Mid-Training) - AI Local — Personal Knowledge Base</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#exprl-exploratory-rl-for-llm-mid-training" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,7 +88,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="AI Local — Personal Knowledge Base" class="md-header__button md-logo" aria-label="AI Local — Personal Knowledge Base" data-md-component="logo">
+    <a href="../.." title="AI Local — Personal Knowledge Base" class="md-header__button md-logo" aria-label="AI Local — Personal Knowledge Base" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -99,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              ExpRL (Dense RL for Mid-Training)
             
           </span>
         </div>
@@ -174,7 +183,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -195,7 +204,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/hardware/" class="md-tabs__link">
+        <a href="../../hardware/" class="md-tabs__link">
           
   
   
@@ -215,7 +224,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/models/" class="md-tabs__link">
+        <a href="../../models/" class="md-tabs__link">
           
   
   
@@ -235,7 +244,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/inference/" class="md-tabs__link">
+        <a href="../../inference/" class="md-tabs__link">
           
   
   
@@ -255,7 +264,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/tips/" class="md-tabs__link">
+        <a href="../../tips/" class="md-tabs__link">
           
   
   
@@ -271,11 +280,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/research/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -295,7 +306,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/software-thoughts/" class="md-tabs__link">
+        <a href="../../software-thoughts/" class="md-tabs__link">
           
   
   
@@ -315,7 +326,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/tools/" class="md-tabs__link">
+        <a href="../../tools/" class="md-tabs__link">
           
   
   
@@ -349,7 +360,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="AI Local — Personal Knowledge Base" class="md-nav__button md-logo" aria-label="AI Local — Personal Knowledge Base" data-md-component="logo">
+    <a href="../.." title="AI Local — Personal Knowledge Base" class="md-nav__button md-logo" aria-label="AI Local — Personal Knowledge Base" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -367,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -446,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/hardware/" class="md-nav__link">
+      <a href="../../hardware/" class="md-nav__link">
         
   
   
@@ -474,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/hardware/ryzen7-9700x-rtx5060/" class="md-nav__link">
+      <a href="../../hardware/ryzen7-9700x-rtx5060/" class="md-nav__link">
         
   
   
@@ -502,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/hardware/i5-4570-1050ti/" class="md-nav__link">
+      <a href="../../hardware/i5-4570-1050ti/" class="md-nav__link">
         
   
   
@@ -589,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/" class="md-nav__link">
+      <a href="../../models/" class="md-nav__link">
         
   
   
@@ -617,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/how-llms-work/" class="md-nav__link">
+      <a href="../../models/how-llms-work/" class="md-nav__link">
         
   
   
@@ -645,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/llama/" class="md-nav__link">
+      <a href="../../models/llama/" class="md-nav__link">
         
   
   
@@ -673,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/qwen/" class="md-nav__link">
+      <a href="../../models/qwen/" class="md-nav__link">
         
   
   
@@ -701,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/deepseek/" class="md-nav__link">
+      <a href="../../models/deepseek/" class="md-nav__link">
         
   
   
@@ -729,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/gemma/" class="md-nav__link">
+      <a href="../../models/gemma/" class="md-nav__link">
         
   
   
@@ -757,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/mistral/" class="md-nav__link">
+      <a href="../../models/mistral/" class="md-nav__link">
         
   
   
@@ -785,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/smollm/" class="md-nav__link">
+      <a href="../../models/smollm/" class="md-nav__link">
         
   
   
@@ -813,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/lfm/" class="md-nav__link">
+      <a href="../../models/lfm/" class="md-nav__link">
         
   
   
@@ -841,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/kimi/" class="md-nav__link">
+      <a href="../../models/kimi/" class="md-nav__link">
         
   
   
@@ -869,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/holo/" class="md-nav__link">
+      <a href="../../models/holo/" class="md-nav__link">
         
   
   
@@ -897,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/mellum/" class="md-nav__link">
+      <a href="../../models/mellum/" class="md-nav__link">
         
   
   
@@ -925,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/nemotron/" class="md-nav__link">
+      <a href="../../models/nemotron/" class="md-nav__link">
         
   
   
@@ -953,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/north-mini-code/" class="md-nav__link">
+      <a href="../../models/north-mini-code/" class="md-nav__link">
         
   
   
@@ -981,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/nex-n2/" class="md-nav__link">
+      <a href="../../models/nex-n2/" class="md-nav__link">
         
   
   
@@ -1061,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/qwen3-embedding/" class="md-nav__link">
+      <a href="../../models/qwen3-embedding/" class="md-nav__link">
         
   
   
@@ -1089,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/miso/" class="md-nav__link">
+      <a href="../../models/miso/" class="md-nav__link">
         
   
   
@@ -1117,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/whisper-large-v3-turbo/" class="md-nav__link">
+      <a href="../../models/whisper-large-v3-turbo/" class="md-nav__link">
         
   
   
@@ -1145,7 +1156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/locate-anything/" class="md-nav__link">
+      <a href="../../models/locate-anything/" class="md-nav__link">
         
   
   
@@ -1173,7 +1184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/ideogram/" class="md-nav__link">
+      <a href="../../models/ideogram/" class="md-nav__link">
         
   
   
@@ -1201,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/harness/" class="md-nav__link">
+      <a href="../../models/harness/" class="md-nav__link">
         
   
   
@@ -1229,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/models/fastcontext/" class="md-nav__link">
+      <a href="../../models/fastcontext/" class="md-nav__link">
         
   
   
@@ -1324,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/inference/" class="md-nav__link">
+      <a href="../../inference/" class="md-nav__link">
         
   
   
@@ -1352,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/inference/ollama/" class="md-nav__link">
+      <a href="../../inference/ollama/" class="md-nav__link">
         
   
   
@@ -1380,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/inference/llama-cpp/" class="md-nav__link">
+      <a href="../../inference/llama-cpp/" class="md-nav__link">
         
   
   
@@ -1408,7 +1419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/inference/lm-studio/" class="md-nav__link">
+      <a href="../../inference/lm-studio/" class="md-nav__link">
         
   
   
@@ -1436,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/inference/turboquant/" class="md-nav__link">
+      <a href="../../inference/turboquant/" class="md-nav__link">
         
   
   
@@ -1523,7 +1534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tips/" class="md-nav__link">
+      <a href="../../tips/" class="md-nav__link">
         
   
   
@@ -1551,7 +1562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tips/agentic-ai-engineer-roadmap/" class="md-nav__link">
+      <a href="../../tips/agentic-ai-engineer-roadmap/" class="md-nav__link">
         
   
   
@@ -1579,7 +1590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tips/loop-engineering/" class="md-nav__link">
+      <a href="../../tips/loop-engineering/" class="md-nav__link">
         
   
   
@@ -1611,26 +1622,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1648,7 +1664,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1666,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1694,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/sgs-self-play/" class="md-nav__link">
+      <a href="../sgs-self-play/" class="md-nav__link">
         
   
   
@@ -1722,7 +1738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/dive-into-claude-code/" class="md-nav__link">
+      <a href="../dive-into-claude-code/" class="md-nav__link">
         
   
   
@@ -1750,7 +1766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/recursive-language-models/" class="md-nav__link">
+      <a href="../recursive-language-models/" class="md-nav__link">
         
   
   
@@ -1778,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/dataset-policy-gradient/" class="md-nav__link">
+      <a href="../dataset-policy-gradient/" class="md-nav__link">
         
   
   
@@ -1806,7 +1822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/graph-memory-agents/" class="md-nav__link">
+      <a href="../graph-memory-agents/" class="md-nav__link">
         
   
   
@@ -1834,7 +1850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/harnessx/" class="md-nav__link">
+      <a href="../harnessx/" class="md-nav__link">
         
   
   
@@ -1862,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/polar-program-of-layers/" class="md-nav__link">
+      <a href="../polar-program-of-layers/" class="md-nav__link">
         
   
   
@@ -1890,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/seerepo/" class="md-nav__link">
+      <a href="../seerepo/" class="md-nav__link">
         
   
   
@@ -1918,7 +1934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/chatbot-to-digital-colleague/" class="md-nav__link">
+      <a href="../chatbot-to-digital-colleague/" class="md-nav__link">
         
   
   
@@ -1946,7 +1962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/from-agi-to-asi/" class="md-nav__link">
+      <a href="../from-agi-to-asi/" class="md-nav__link">
         
   
   
@@ -1974,7 +1990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/s2l-po-grpo-diversity/" class="md-nav__link">
+      <a href="../s2l-po-grpo-diversity/" class="md-nav__link">
         
   
   
@@ -2002,7 +2018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/vibethinker-3b/" class="md-nav__link">
+      <a href="../vibethinker-3b/" class="md-nav__link">
         
   
   
@@ -2030,7 +2046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/minimax-sparse-attention/" class="md-nav__link">
+      <a href="../minimax-sparse-attention/" class="md-nav__link">
         
   
   
@@ -2058,7 +2074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/flashmemory-deepseek-v4/" class="md-nav__link">
+      <a href="../flashmemory-deepseek-v4/" class="md-nav__link">
         
   
   
@@ -2086,7 +2102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/attention-amnesia-hybrid-llms/" class="md-nav__link">
+      <a href="../attention-amnesia-hybrid-llms/" class="md-nav__link">
         
   
   
@@ -2114,7 +2130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/n-grpo/" class="md-nav__link">
+      <a href="../n-grpo/" class="md-nav__link">
         
   
   
@@ -2142,7 +2158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/nextlat/" class="md-nav__link">
+      <a href="../nextlat/" class="md-nav__link">
         
   
   
@@ -2170,7 +2186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/research/agentic-automata-learning/" class="md-nav__link">
+      <a href="../agentic-automata-learning/" class="md-nav__link">
         
   
   
@@ -2195,10 +2211,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/research/exprl-mid-training/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ExpRL (Dense RL for Mid-Training)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2214,6 +2257,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tldr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TL;DR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-mid-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is mid-training?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-with-sparse-rewards-in-mid-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem with sparse rewards in mid-training
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exprl-reference-solutions-as-reward-scaffolds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExpRL: reference solutions as reward scaffolds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relation-to-other-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relation to other work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2285,7 +2425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/software-thoughts/" class="md-nav__link">
+      <a href="../../software-thoughts/" class="md-nav__link">
         
   
   
@@ -2313,7 +2453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/software-thoughts/every-system-is-a-log/" class="md-nav__link">
+      <a href="../../software-thoughts/every-system-is-a-log/" class="md-nav__link">
         
   
   
@@ -2400,7 +2540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/" class="md-nav__link">
+      <a href="../../tools/" class="md-nav__link">
         
   
   
@@ -2480,7 +2620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/ui/" class="md-nav__link">
+      <a href="../../tools/ui/" class="md-nav__link">
         
   
   
@@ -2508,7 +2648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/ui/openwebui/" class="md-nav__link">
+      <a href="../../tools/ui/openwebui/" class="md-nav__link">
         
   
   
@@ -2536,7 +2676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/ui/anythingllm/" class="md-nav__link">
+      <a href="../../tools/ui/anythingllm/" class="md-nav__link">
         
   
   
@@ -2624,7 +2764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/cli/" class="md-nav__link">
+      <a href="../../tools/cli/" class="md-nav__link">
         
   
   
@@ -2652,7 +2792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/cli/claude-code-alternatives/" class="md-nav__link">
+      <a href="../../tools/cli/claude-code-alternatives/" class="md-nav__link">
         
   
   
@@ -2740,7 +2880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/turbovec/" class="md-nav__link">
+      <a href="../../tools/turbovec/" class="md-nav__link">
         
   
   
@@ -2768,7 +2908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/zvec/" class="md-nav__link">
+      <a href="../../tools/zvec/" class="md-nav__link">
         
   
   
@@ -2796,7 +2936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/leann/" class="md-nav__link">
+      <a href="../../tools/leann/" class="md-nav__link">
         
   
   
@@ -2884,7 +3024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/understand-anything/" class="md-nav__link">
+      <a href="../../tools/understand-anything/" class="md-nav__link">
         
   
   
@@ -2912,7 +3052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tools/codebase-memory-mcp/" class="md-nav__link">
+      <a href="../../tools/codebase-memory-mcp/" class="md-nav__link">
         
   
   
@@ -2965,6 +3105,93 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tldr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TL;DR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-mid-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is mid-training?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-with-sparse-rewards-in-mid-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem with sparse rewards in mid-training
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exprl-reference-solutions-as-reward-scaffolds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExpRL: reference solutions as reward scaffolds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relation-to-other-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relation to other work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2977,8 +3204,148 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="exprl-exploratory-rl-for-llm-mid-training">ExpRL: Exploratory RL for LLM Mid-Training<a class="headerlink" href="#exprl-exploratory-rl-for-llm-mid-training" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Source: <a href="https://arxiv.org/abs/2606.17024">arXiv:2606.17024</a> · Violet Xiang, Amrith Setlur, Chase Blagden, Nick Haber, Aviral Kumar · June 2026</p>
+</blockquote>
+<h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
+<p>Standard mid-training uses SFT on curated reasoning traces to prime models before final RL. ExpRL replaces that SFT with RL itself — but dense RL, where an LLM judge scores both intermediate steps and final answers against a reference solution used as a grading rubric rather than an imitation target. On challenging math reasoning, ExpRL provides a better RL initialisation than SFT, sparse GRPO, and self-distillation.</p>
+<hr />
+<h2 id="what-is-mid-training">What is mid-training?<a class="headerlink" href="#what-is-mid-training" title="Permanent link">&para;</a></h2>
+<p>LLM training has three phases:</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pre-training</strong></td>
+<td>Next-token prediction on massive text; builds broad knowledge</td>
+</tr>
+<tr>
+<td><strong>Mid-training</strong></td>
+<td>Curated reasoning traces teach structured problem-solving skills</td>
+</tr>
+<tr>
+<td><strong>Final RL</strong></td>
+<td>Sparse-reward RL (e.g. GRPO) refines reasoning toward correct answers</td>
+</tr>
+</tbody>
+</table>
+<p>Mid-training is the "priming" phase — it sets up the model for final RL to work efficiently. Currently, mid-training is done with SFT on high-quality reasoning demonstrations. ExpRL asks: what if we used RL here instead?</p>
+<hr />
+<h2 id="the-problem-with-sparse-rewards-in-mid-training">The problem with sparse rewards in mid-training<a class="headerlink" href="#the-problem-with-sparse-rewards-in-mid-training" title="Permanent link">&para;</a></h2>
+<p>Sparse rewards (correct/incorrect final answer) work in final RL because the model is already good enough to produce correct answers occasionally — the signal is noisy but present.</p>
+<p>In mid-training, the model is still learning basic reasoning primitives. Sparse rewards fail to upweight:
+- Useful intermediate reductions (progress toward a solution)
+- Correct reasoning strategies that reach wrong answers due to arithmetic errors
+- Productive exploration behaviours that don't immediately pay off</p>
+<p>SFT sidesteps this by simply imitating traces, but imitation can't teach the model to explore or recover from mistakes.</p>
+<hr />
+<h2 id="exprl-reference-solutions-as-reward-scaffolds">ExpRL: reference solutions as reward scaffolds<a class="headerlink" href="#exprl-reference-solutions-as-reward-scaffolds" title="Permanent link">&para;</a></h2>
+<p>The key reframe: treat reference solutions not as <strong>imitation targets</strong> (SFT) but as <strong>reward scaffolds</strong>.</p>
+<p>In ExpRL:
+1. Reference solutions are <strong>hidden from the policy</strong> — the model never sees them as demonstrations
+2. They are used only to build <strong>problem-specific grading rubrics</strong> for an LLM judge
+3. The LLM judge scores the model's on-policy reasoning traces against these rubrics</p>
+<p>Two reward levels:
+- <strong>Outcome-level</strong>: did the final answer match?
+- <strong>Process-level</strong>: did intermediate steps show useful progress, valid reductions, sound reasoning?</p>
+<p>The dense signal lets the model learn from partial progress and intermediate structure, not just from fully correct solutions.</p>
+<hr />
+<h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
+<p>Evaluated on challenging math reasoning tasks:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>RL priming quality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SFT on demonstrations</td>
+<td>Baseline</td>
+</tr>
+<tr>
+<td>Sparse-reward GRPO</td>
+<td>Worse than SFT</td>
+</tr>
+<tr>
+<td>Self-distillation</td>
+<td>Worse than SFT</td>
+</tr>
+<tr>
+<td><strong>ExpRL (dense LLM-judge rewards)</strong></td>
+<td><strong>Best</strong></td>
+</tr>
+</tbody>
+</table>
+<p>ExpRL also provides a better initialisation for <strong>subsequent sparse-reward RL</strong> — the final RL phase converges faster and to higher performance when started from an ExpRL-primed checkpoint rather than an SFT checkpoint.</p>
+<hr />
+<h2 id="relation-to-other-work">Relation to other work<a class="headerlink" href="#relation-to-other-work" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Where it sits</th>
+<th>Reward signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SFT (standard mid-training)</td>
+<td>Mid-training</td>
+<td>None — supervised imitation</td>
+</tr>
+<tr>
+<td>GRPO</td>
+<td>Final RL</td>
+<td>Sparse (binary correct/incorrect)</td>
+</tr>
+<tr>
+<td><a href="../s2l-po-grpo-diversity/">S2L-PO</a></td>
+<td>Final RL</td>
+<td>Sparse, but diverse rollouts via small model</td>
+</tr>
+<tr>
+<td><a href="../n-grpo/">N-GRPO</a></td>
+<td>Final RL</td>
+<td>Sparse, but diverse rollouts via embedding mixing</td>
+</tr>
+<tr>
+<td><strong>ExpRL</strong></td>
+<td><strong>Mid-training</strong></td>
+<td><strong>Dense, process + outcome, LLM judge</strong></td>
+</tr>
+</tbody>
+</table>
+<p>ExpRL is complementary to S2L-PO and N-GRPO: those improve rollout diversity during final RL; ExpRL improves the initialisation that final RL starts from.</p>
+<hr />
+<h2 id="source">Source<a class="headerlink" href="#source" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Paper</strong>: <a href="https://arxiv.org/abs/2606.17024">arXiv:2606.17024</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -3021,10 +3388,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.copy"], "search": "/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
