@@ -90,5 +90,5 @@ The new source is picked up automatically by `inbox/run_digest.py` (it globs
 ## Notes
 
 - Keep dependencies to `requests`, `feedparser`, `anthropic` (already in
-  `inbox/requirements.txt`); prefer the standard library otherwise.
+  the top-level `requirements.txt`); prefer the standard library otherwise.
 - Commit the new source directory including its initial `last_seen.txt`.
