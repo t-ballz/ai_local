@@ -54,6 +54,7 @@ nav:
     - Specialized:
       - Qwen3 Embedding & Reranker: models/qwen3-embedding.md
       - Miso One (TTS): models/miso.md
+      - Whisper Large V3 Turbo (ASR): models/whisper-large-v3-turbo.md
       - LocateAnything-3B: models/locate-anything.md
       - Ideogram 4.0: models/ideogram.md
       - Harness-1 (Search Agent): models/harness.md
