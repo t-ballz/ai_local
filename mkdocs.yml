@@ -95,3 +95,4 @@ nav:
       - LEANN (Low-Storage Vector Index): tools/leann.md
     - Code Intelligence:
       - Understand Anything: tools/understand-anything.md
+      - codebase-memory-mcp (AST Graph MCP): tools/codebase-memory-mcp.md
