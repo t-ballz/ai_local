@@ -92,5 +92,6 @@ nav:
     - RAG:
       - turbovec (Vector Search): tools/turbovec.md
       - Zvec (Vector DB): tools/zvec.md
+      - LEANN (Low-Storage Vector Index): tools/leann.md
     - Code Intelligence:
       - Understand Anything: tools/understand-anything.md
