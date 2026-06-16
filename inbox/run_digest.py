@@ -3,10 +3,11 @@
 
 For each source under inbox/sources/*/:
   1. Run enumerate.py to discover new items (JSON array on stdout).
-  2. For each item, run the source's fetch.py {id}, pipe content to
-     lib/summarize.py, and collect the Haiku summary + wiki-relevance verdict.
-  3. Format a markdown digest grouped by source.
-  4. Write it to inbox/digests/YYYY-MM-DD.md and print it to stdout.
+  2. Format a markdown digest grouped by source, using each item's snippet.
+  3. Write it to inbox/digests/YYYY-MM-DD.md and print it to stdout.
+
+Summarization is NOT done here — the calling skill (digest.md) spawns a Haiku
+subagent to summarize items after enumeration.
 
 Per-item and per-source failures are caught and noted inline; one broken source
 never aborts the whole run.
@@ -27,20 +28,13 @@ from pathlib import Path
 INBOX_DIR = Path(__file__).resolve().parent
 SOURCES_DIR = INBOX_DIR / "sources"
 DIGESTS_DIR = INBOX_DIR / "digests"
-SUMMARIZE = INBOX_DIR / "lib" / "summarize.py"
 
 # pending Twitter items added manually via the add-tweet skill
 TWITTER_PENDING = SOURCES_DIR / "twitter-follows" / "pending.json"
 
 
-def run(cmd: list[str], *, stdin: str | None = None, timeout: int = 120) -> subprocess.CompletedProcess:
-    return subprocess.run(
-        cmd,
-        input=stdin,
-        capture_output=True,
-        text=True,
-        timeout=timeout,
-    )
+def run(cmd: list[str], *, timeout: int = 60) -> subprocess.CompletedProcess:
+    return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
 
 
 def enumerate_source(source_dir: Path, dry_run: bool) -> tuple[list[dict], str | None]:
@@ -64,21 +58,6 @@ def enumerate_source(source_dir: Path, dry_run: bool) -> tuple[list[dict], str |
     return items, warning
 
 
-def fetch_and_summarize(source_dir: Path, item_id: str) -> str:
-    """Fetch full item content and summarize it. Returns the summary text."""
-    fetch = source_dir / "fetch.py"
-    if not fetch.exists():
-        return "(no fetch.py for this source)"
-    proc = run([sys.executable, str(fetch), item_id])
-    if proc.returncode != 0:
-        return f"(fetch failed: {proc.stderr.strip() or proc.returncode})"
-    content = proc.stdout
-    sproc = run([sys.executable, str(SUMMARIZE)], stdin=content)
-    if sproc.returncode != 0:
-        return f"(summarize failed: {sproc.stderr.strip() or sproc.returncode})"
-    return sproc.stdout.strip()
-
-
 def load_twitter_pending() -> list[dict]:
     if not TWITTER_PENDING.exists():
         return []
@@ -89,14 +68,16 @@ def load_twitter_pending() -> list[dict]:
         return []
 
 
-def format_item(index: int, item: dict, summary: str) -> str:
+def format_item(index: int, item: dict) -> str:
     title = item.get("title") or "(untitled)"
     url = item.get("url") or ""
+    snippet = item.get("snippet") or item.get("_pending_summary") or ""
     lines = [f"### {index}. {title}"]
     if url:
         lines.append(f"<{url}>")
-    lines.append("")
-    lines.append(summary or "(no summary)")
+    if snippet:
+        lines.append("")
+        lines.append(snippet)
     lines.append("")
     return "\n".join(lines)
 
@@ -116,7 +97,7 @@ def main() -> int:
 
         try:
             items, cap_warning = enumerate_source(source_dir, dry_run)
-        except Exception as exc:  # noqa: BLE001 - skip this source, keep going
+        except Exception as exc:  # noqa: BLE001
             section_lines.append(f"_Error enumerating: {exc}_")
             section_lines.append("")
             sections.append("\n".join(section_lines))
@@ -130,15 +111,13 @@ def main() -> int:
         if name == "twitter-follows":
             pending = load_twitter_pending()
             for p in pending:
-                items.append(
-                    {
-                        "id": p.get("id", ""),
-                        "title": p.get("title", "(tweet)"),
-                        "url": p.get("url", ""),
-                        "snippet": p.get("snippet", ""),
-                        "_pending_summary": p.get("summary", ""),
-                    }
-                )
+                items.append({
+                    "id": p.get("id", ""),
+                    "title": p.get("title", "(tweet)"),
+                    "url": p.get("url", ""),
+                    "snippet": p.get("snippet", ""),
+                    "_pending_summary": p.get("summary", ""),
+                })
 
         if not items:
             section_lines.append("_No new items._")
@@ -148,16 +127,7 @@ def main() -> int:
 
         for item in items:
             item_counter += 1
-            item_id = item.get("id", "")
-            # Pending Twitter items already carry a summary — don't refetch.
-            if item.get("_pending_summary"):
-                summary = item["_pending_summary"]
-            else:
-                try:
-                    summary = fetch_and_summarize(source_dir, item_id)
-                except Exception as exc:  # noqa: BLE001
-                    summary = f"(error: {exc})"
-            section_lines.append(format_item(item_counter, item, summary))
+            section_lines.append(format_item(item_counter, item))
 
         sections.append("\n".join(section_lines))
 

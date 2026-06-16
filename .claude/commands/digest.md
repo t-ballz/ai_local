@@ -12,57 +12,58 @@ Twitter items).
 .venv/bin/python inbox/run_digest.py
 ```
 
-This enumerates every source under `inbox/sources/*/`, attempts Haiku summaries,
-writes the result to `inbox/digests/YYYY-MM-DD.md`, and advances each source's
-`last_seen.txt`.
-
-**Note on Haiku summaries:** `ANTHROPIC_API_KEY` is not exposed to subprocesses
-by Claude Code, so all summaries will show `(no Haiku summary — set ANTHROPIC_API_KEY)`.
-This is expected. You will summarize items yourself in step 3.
+This enumerates every source under `inbox/sources/*/`, writes a raw markdown
+listing (titles + snippets, no AI summaries) to `inbox/digests/YYYY-MM-DD.md`,
+advances each source's `last_seen.txt`, and prints the same to stdout.
 
 For a preview without advancing pointers:
 ```bash
 .venv/bin/python inbox/run_digest.py --dry-run
 ```
 
-### 2. Read the digest file
+### 2. Summarize with a Haiku subagent
+
+Collect all items from the orchestrator output (title, URL, snippet). Spawn a
+**single Haiku subagent** to process all items at once:
 
 ```
-inbox/digests/<today>.md
+Agent(
+  model="haiku",
+  prompt="""You are a triage assistant for a personal wiki on local AI and open-weight models.
+
+For each item below, write:
+1. A 2-3 sentence summary of what it is.
+2. A wiki-relevance verdict: Skip | Minor | Wiki-relevant
+
+Wiki-relevant = open-weight model release, local inference tool, research paper
+on training/architecture/agents, or practical AI-engineering technique.
+Skip = proprietary/API-only, AI policy/news, non-AI topics.
+Minor = tangentially related, probably not worth a full page.
+
+Items:
+<numbered list of title + URL + snippet>
+"""
+)
 ```
 
-Note which items have content to summarize (items with a URL are fetchable).
+Use one agent call for all items — do not spawn one per item.
 
 ### 3. Present the digest to the user
 
-Group by source. For each item:
-- **Number** it sequentially across all sources
-- Show: **title**, **URL**, your **2-3 sentence summary** (fetch the URL if needed
-  to write a meaningful summary), and a **wiki-relevance verdict**
-
-For items where the title alone is enough to judge (opinion pieces, changelogs with
-no local-AI angle): summarize from the title + snippet without fetching.
-
-For items that look wiki-relevant: fetch the URL and summarize properly before
-presenting.
-
-**Wiki-relevance verdicts:**
-- **Skip** — proprietary models, AI policy/news, non-AI topics
-- **Minor** — tangentially relevant; probably not worth a full page
-- **Wiki-relevant** — open-weight model, local tool, research paper, engineering technique
-
-### 4. Offer research
+Group by source. For each item show: number, title, URL, Haiku summary, verdict.
 
 End with:
 
 > Reply with item numbers to research any of these into the wiki.
 
-When the user replies with numbers, research each item using the same workflow as
+### 4. Research items on request
+
+When the user replies with numbers, research each using the workflow in
 `/project:add-tweet`'s "research now" path:
 
-1. Find arXiv ID if it's a paper (`WebSearch` with `allowed_domains=["arxiv.org"]`)
-2. Fetch content (arXiv abstract, GitHub README, or article)
-3. Decide section (models / tools / research / software-thoughts)
+1. Find arXiv ID if it's a paper: `WebSearch(allowed_domains=["arxiv.org"])`
+2. Fetch content (arXiv abstract, GitHub README, or article URL)
+3. Decide section: models / tools / research / software-thoughts
 4. Write the wiki page
 5. Update `mkdocs.yml` and the section's `index.md`
 6. Commit
@@ -72,5 +73,5 @@ When the user replies with numbers, research each item using the same workflow a
 - Digests are written to `inbox/digests/` (gitignored — not committed).
 - Twitter items come from `inbox/sources/twitter-follows/pending.json`,
   populated via `/project:add-tweet`.
-- Reddit r/LocalLLaMA returns 403 from datacenter IPs — this is expected and
-  handled gracefully; the orchestrator logs the error and continues.
+- Reddit r/LocalLLaMA returns 403 from datacenter IPs — expected, handled
+  gracefully by the orchestrator.

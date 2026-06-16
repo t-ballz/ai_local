@@ -20,18 +20,27 @@ bare tweet ID. `fetch.py` extracts the ID itself, so pass the argument through.
 .venv/bin/python inbox/sources/twitter-follows/fetch.py "<url-or-id>"
 ```
 
-### 2. Assess the tweet yourself
+### 2. Summarize with a Haiku subagent
 
-**Do not run `summarize.py`** — `ANTHROPIC_API_KEY` is not exposed to subprocesses
-by Claude Code, so it always returns the fallback string. Summarize from the fetched
-content directly.
+Spawn a **Haiku subagent** with the fetched tweet text:
 
-Write a 2-3 sentence summary and a wiki-relevance verdict:
+```
+Agent(
+  model="haiku",
+  prompt="""Summarize this tweet for a personal wiki on local AI and open-weight models.
 
-- **Skip** — opinion, hype, proprietary/API-only tools, news without a concrete
-  artifact (model weights, paper, open-source tool).
-- **Wiki-relevant** — open-weight model release, local inference tool, research
-  paper, practical engineering technique.
+Write:
+1. A 2-3 sentence summary of what it describes.
+2. A wiki-relevance verdict on one line:
+   - Wiki-relevant — open-weight model, local inference tool, research paper, engineering technique
+   - Minor — tangentially related, probably not worth a full wiki page
+   - Skip — proprietary/API-only, AI policy/news, opinion, hype
+
+Tweet:
+<tweet text>
+"""
+)
+```
 
 ### 3. Present to the user
 
