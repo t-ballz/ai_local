@@ -21,32 +21,33 @@ For a preview without advancing pointers:
 .venv/bin/python inbox/run_digest.py --dry-run
 ```
 
-### 2. Summarize with a Haiku subagent
+### 2. Summarize each item with its own Haiku subagent
 
-Collect all items from the orchestrator output (title, URL, snippet). Spawn a
-**single Haiku subagent** to process all items at once:
+For each item from the orchestrator output, spawn **one Haiku subagent per item**
+(in parallel where possible):
 
 ```
 Agent(
   model="haiku",
-  prompt="""You are a triage assistant for a personal wiki on local AI and open-weight models.
+  prompt="""Summarize this item for a personal wiki on local AI and open-weight models.
 
-For each item below, write:
-1. A 2-3 sentence summary of what it is.
-2. A wiki-relevance verdict: Skip | Minor | Wiki-relevant
+Write:
+1. A 2-3 sentence summary.
+2. A wiki-relevance verdict on one line:
+   - Wiki-relevant — open-weight model, local inference tool, research paper, engineering technique
+   - Minor — tangentially related, probably not worth a full wiki page
+   - Skip — proprietary/API-only, AI policy/news, opinion, hype
 
-Wiki-relevant = open-weight model release, local inference tool, research paper
-on training/architecture/agents, or practical AI-engineering technique.
-Skip = proprietary/API-only, AI policy/news, non-AI topics.
-Minor = tangentially related, probably not worth a full page.
-
-Items:
-<numbered list of title + URL + snippet>
+Item:
+Title: <title>
+URL: <url>
+Snippet: <snippet>
 """
 )
 ```
 
-Use one agent call for all items — do not spawn one per item.
+Spawn all per-item agents in parallel (one `Agent` call per item in a single
+message) to keep the total wall time low.
 
 ### 3. Present the digest to the user
 
