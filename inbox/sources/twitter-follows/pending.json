@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": "2067170138466693371",
+    "url": "https://x.com/KanikaBK/status/2067170138466693371",
+    "title": "Tweet by @KanikaBK: Cursor open-sourced Priompt, their JSX-based context-priority prompt library",
+    "snippet": "Cursor just open-sourced the internal prompt library that powers their $9B code editor. It's called Priompt. JSX-based, assign priorities to every part of your prompt — low priority content drops when context fills up. Scopes, isolation, and inspection built in.",
+    "summary": "Cursor open-sourced Priompt, a JSX-based prompt library that manages context window pressure by letting you assign priorities to prompt components — low-priority content is automatically dropped when the context fills up. Has scopes, isolation, and inspection built in; battle-tested inside the Cursor editor. Minor — open-source engineering tool, not an open-weight model or local inference research artifact."
+  }
+]

@@ -9,3 +9,5 @@
 | [LEANN](leann.md) | Low-storage vector index (MLSys 2026); 97% storage savings via on-the-fly embedding recomputation; laptop-scale RAG |
 | [Code Intelligence](understand-anything.md) | Understand Anything — codebase knowledge graph, diff impact analysis, Claude Code plugin |
 | [codebase-memory-mcp](codebase-memory-mcp.md) | AST knowledge graph MCP server (arXiv:2603.27277); 158 langs, 99% token reduction, sub-ms queries, single static binary |
+| **Prompt Engineering** | |
+| [Priompt](priompt.md) | Cursor's open-source JSX prompt library; priority-based context management — low-priority content drops automatically when the token budget fills |

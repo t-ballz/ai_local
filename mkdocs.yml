@@ -109,3 +109,5 @@ nav:
     - Code Intelligence:
       - Understand Anything: tools/understand-anything.md
       - codebase-memory-mcp (AST Graph MCP): tools/codebase-memory-mcp.md
+    - Prompt Engineering:
+      - Priompt (Priority-Based Prompts): tools/priompt.md
