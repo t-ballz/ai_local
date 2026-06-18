@@ -26,5 +26,12 @@
     "title": "Tweet by @xiaoying_eth: 10 AI agent GitHub repos worth bookmarking",
     "snippet": "OpenHands (SWE-bench 77.6%), Hermes Agent (190k stars, self-training), CrewAI (multi-agent collaboration), Aider (terminal AI pair programmer), n8n (400+ service automation), LangGraph (production agent scheduling), Cloudflare Agentic Inbox, Browser Use (99k stars), awesome-mcp-servers, claude-task-master.",
     "summary": "Curated list of 10 open-source AI agent tools: OpenHands autonomous coder (77.6% SWE-bench), Hermes Agent self-training personal AI, CrewAI multi-agent framework, Aider terminal pair programmer, n8n self-hosted automation, LangGraph state-graph agent orchestrator, Cloudflare Agentic Inbox, Browser Use browser automation, awesome-mcp-servers directory, and claude-task-master multi-agent coordinator. Wiki-relevant — several tools worth individual pages."
+  },
+  {
+    "id": "2067302219393937813",
+    "url": "https://x.com/askalphaxiv/status/2067302219393937813",
+    "title": "Tweet by @askalphaxiv: Latent Thought Flow — GFlowNet distribution over reasoning paths",
+    "snippet": "Latent Thought Flow moves reasoning into continuous latent space, learning a distribution over many paths via a continuous GFlowNet. Gives more probability to trajectories that are correct and cheap; stops early on easy problems, thinks longer on hard ones. Better accuracy with reduced reasoning length.",
+    "summary": "Latent Thought Flow is a research technique that models reasoning as a distribution over multiple latent paths using a continuous GFlowNet, rather than a single fixed trajectory. It assigns higher probability to correct and efficient paths, enabling adaptive computation per-problem. Achieved better accuracy with reduced reasoning length. Wiki-relevant research paper — arXiv ID not confirmed, save for follow-up."
   }
 ]

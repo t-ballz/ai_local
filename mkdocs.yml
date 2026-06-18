@@ -103,12 +103,15 @@ nav:
     - CLI Tools:
       - Overview: tools/cli/index.md
       - Claude Code Alternatives: tools/cli/claude-code-alternatives.md
-    - RAG:
+    - RAG & Knowledge Extraction:
       - turbovec (Vector Search): tools/turbovec.md
       - Zvec (Vector DB): tools/zvec.md
       - LEANN (Low-Storage Vector Index): tools/leann.md
+      - Hyper-Extract (Typed KG Extraction): tools/hyper-extract.md
     - Code Intelligence:
       - Understand Anything: tools/understand-anything.md
       - codebase-memory-mcp (AST Graph MCP): tools/codebase-memory-mcp.md
     - Prompt Engineering:
       - Priompt (Priority-Based Prompts): tools/priompt.md
+    - Knowledge Synthesis:
+      - STORM (Multi-Perspective Wiki Generation): tools/storm.md
