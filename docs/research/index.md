@@ -23,3 +23,4 @@ Papers and articles on AI/ML topics beyond local inference — training methods,
 | [NextLat: Next-Latent Prediction](nextlat.md) | Auxiliary latent-state prediction injects world-model bias into transformers; 3.3× self-speculative decoding speedup | Nov 2025 |
 | [Agentic Automata Learning](agentic-automata-learning.md) | Agents reconstruct hidden DFAs via membership/equivalence queries; clean benchmark for world-model claims | Jun 2026 |
 | [ExpRL: Dense RL for LLM Mid-Training](exprl-mid-training.md) | LLM-judge process+outcome rewards during mid-training; better RL priming than SFT, GRPO, or self-distillation | Jun 2026 |
+| [Can LLMs Discover Zero?](llm-discover-zero.md) | Seeing the token `0` ≠ knowing the concept; models need explicit relational examples; language pretraining halves the required count | Jun 2026 |

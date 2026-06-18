@@ -90,6 +90,7 @@ nav:
     - NextLat (Next-Latent Prediction): research/nextlat.md
     - Agentic Automata Learning: research/agentic-automata-learning.md
     - ExpRL (Dense RL for Mid-Training): research/exprl-mid-training.md
+    - Can LLMs Discover Zero?: research/llm-discover-zero.md
   - Software Thoughts:
     - Overview: software-thoughts/index.md
     - Every System is a Log: software-thoughts/every-system-is-a-log.md
