@@ -24,3 +24,11 @@ Papers and articles on AI/ML topics beyond local inference — training methods,
 | [Agentic Automata Learning](agentic-automata-learning.md) | Agents reconstruct hidden DFAs via membership/equivalence queries; clean benchmark for world-model claims | Jun 2026 |
 | [ExpRL: Dense RL for LLM Mid-Training](exprl-mid-training.md) | LLM-judge process+outcome rewards during mid-training; better RL priming than SFT, GRPO, or self-distillation | Jun 2026 |
 | [Can LLMs Discover Zero?](llm-discover-zero.md) | Seeing the token `0` ≠ knowing the concept; models need explicit relational examples; language pretraining halves the required count | Jun 2026 |
+| [Beyond LoRA: PEFT Method Comparison](peft-beyond-lora.md) | OFT beats LoRA on image gen (lower VRAM + better fidelity); Lily edges LoRA on math; don't default to LoRA | Jun 2026 |
+| [Agentic Benchmarking of Open Models](agentic-benchmarking-open-models.md) | Skill docs help large models, break small ones; Qwen3-14B: 100%→0% when CLI docs added; introduces Markers framework | Jun 2026 |
+| [d-OPSD: Self-Distillation for Diffusion LLMs](dopsd-diffusion-llm-distillation.md) | On-policy self-distillation adapted for dLLMs via suffix conditioning + step-level supervision; 10× compute savings vs RLVR | Jun 2026 |
+| [ZPPO: Teacher in Prompts, Not Gradients](zppo.md) | Knowledge distillation via BCQ/NCQ prompt strategies; replay buffer keeps student in zone of proximal development; beats GRPO on 31 benchmarks | Jun 2026 |
+| [OPD-Evolver: Self-Evolving Agents](opd-evolver.md) | Dual-loop agent: fast memory hierarchy at test time, slow distillation offline; 9B competes with 397B models | Jun 2026 |
+| [Efficient Attention in Hybrid Architectures](efficient-attention-hybrid-architectures.md) | Efficient attention is an optimization prior, not storage; large-window laziness delays retrieval heads; apply NoPE to full-attention layers | Jun 2026 |
+| [UniAR: Unified Multimodal Autoregressive](uniar-unified-multimodal.md) | Single discrete visual tokenizer bridges understanding + generation; SOTA image gen/editing; ICML 2026 | Jun 2026 |
+| [ActWorld: Interactive World Model Memory](actworld-interactive-world-model.md) | Hierarchical action-aware memory routes compression by interaction significance; 2× success on object manipulation | Jun 2026 |

@@ -17,6 +17,7 @@ Overview of the major open-weight model families for local inference.
 | [Nemotron](nemotron.md) | NVIDIA | OpenMDW-1.1 | Hybrid Mamba-Transformer MoE; Nano 30B-A3B / Super 120B-A12B / Ultra 550B-A55B; 1M ctx |
 | [North Mini Code](north-mini-code.md) | Cohere Labs | Apache 2.0 | Agentic coding MoE 30B/3B active, 256K ctx; 80%+ SWE-Bench pass@10 |
 | [Nex N2](nex-n2.md) | Nex AGI | Apache 2.0 | Agentic MoE family; Pro 397B/17B active, Mini 35B/3B active; 80.8 SWE-Bench Verified |
+| [GLM-5.2](glm-5.2.md) | Z.ai (Zhipu) | MIT | 753B MoE text-only; 1M ctx; #1 open-model on AA Intelligence Index; IndexShare cuts per-token FLOPs 2.9× at full ctx |
 
 ## Specialized models
 

@@ -51,6 +51,7 @@ nav:
     - Nemotron: models/nemotron.md
     - North Mini Code: models/north-mini-code.md
     - Nex N2: models/nex-n2.md
+    - GLM-5.2: models/glm-5.2.md
     - Specialized:
       - Qwen3 Embedding & Reranker: models/qwen3-embedding.md
       - Miso One (TTS): models/miso.md
@@ -91,6 +92,14 @@ nav:
     - Agentic Automata Learning: research/agentic-automata-learning.md
     - ExpRL (Dense RL for Mid-Training): research/exprl-mid-training.md
     - Can LLMs Discover Zero?: research/llm-discover-zero.md
+    - Beyond LoRA (PEFT Comparison): research/peft-beyond-lora.md
+    - Agentic Benchmarking of Open Models: research/agentic-benchmarking-open-models.md
+    - d-OPSD (Self-Distillation for dLLMs): research/dopsd-diffusion-llm-distillation.md
+    - ZPPO (Teacher in Prompts): research/zppo.md
+    - OPD-Evolver (Self-Evolving Agents): research/opd-evolver.md
+    - Efficient Attention in Hybrid Architectures: research/efficient-attention-hybrid-architectures.md
+    - UniAR (Unified Multimodal Autoregressive): research/uniar-unified-multimodal.md
+    - ActWorld (Interactive World Model Memory): research/actworld-interactive-world-model.md
   - Software Thoughts:
     - Overview: software-thoughts/index.md
     - Every System is a Log: software-thoughts/every-system-is-a-log.md
