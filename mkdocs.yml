@@ -57,6 +57,7 @@ nav:
       - Miso One (TTS): models/miso.md
       - Whisper Large V3 Turbo (ASR): models/whisper-large-v3-turbo.md
       - LocateAnything-3B: models/locate-anything.md
+      - MolmoMotion (3D Motion Forecasting): models/molmomotion.md
       - Ideogram 4.0: models/ideogram.md
       - Harness-1 (Search Agent): models/harness.md
       - FastContext (Code Explorer): models/fastcontext.md
@@ -100,6 +101,9 @@ nav:
     - Efficient Attention in Hybrid Architectures: research/efficient-attention-hybrid-architectures.md
     - UniAR (Unified Multimodal Autoregressive): research/uniar-unified-multimodal.md
     - ActWorld (Interactive World Model Memory): research/actworld-interactive-world-model.md
+    - ACE-Ego-0 (Human+Robot Data for VLA): research/ace-ego-0.md
+    - EgoCS-400K (Gameplay Dataset for World Models): research/egocs-400k.md
+    - Self-Evolving Visual Questioner: research/self-evolving-visual-questioner.md
   - Software Thoughts:
     - Overview: software-thoughts/index.md
     - Every System is a Log: software-thoughts/every-system-is-a-log.md
@@ -122,5 +126,7 @@ nav:
       - codebase-memory-mcp (AST Graph MCP): tools/codebase-memory-mcp.md
     - Prompt Engineering:
       - Priompt (Priority-Based Prompts): tools/priompt.md
+    - Robotics:
+      - Strands Agents + LeRobot (Sim-to-Hardware): tools/strands-lerobot.md
     - Knowledge Synthesis:
       - STORM (Multi-Perspective Wiki Generation): tools/storm.md

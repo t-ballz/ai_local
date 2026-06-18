@@ -32,3 +32,6 @@ Papers and articles on AI/ML topics beyond local inference — training methods,
 | [Efficient Attention in Hybrid Architectures](efficient-attention-hybrid-architectures.md) | Efficient attention is an optimization prior, not storage; large-window laziness delays retrieval heads; apply NoPE to full-attention layers | Jun 2026 |
 | [UniAR: Unified Multimodal Autoregressive](uniar-unified-multimodal.md) | Single discrete visual tokenizer bridges understanding + generation; SOTA image gen/editing; ICML 2026 | Jun 2026 |
 | [ActWorld: Interactive World Model Memory](actworld-interactive-world-model.md) | Hierarchical action-aware memory routes compression by interaction significance; 2× success on object manipulation | Jun 2026 |
+| [ACE-Ego-0: Human+Robot Data for VLA](ace-ego-0.md) | Converts human egocentric videos to robot pseudo-trajectories; reliability-aware training; SOTA on RoboCasa + RoboTwin | Jun 2026 |
+| [EgoCS-400K: Gameplay Dataset for World Models](egocs-400k.md) | 400K videos / 10K hours from CS professional matches; dense action-state-event annotations for interactive world model training | Jun 2026 |
+| [Self-Evolving Visual Questioner](self-evolving-visual-questioner.md) | VLMs bootstrap harder visual questions via propose→rewrite→filter→retrain loop; no external supervision; backbone-agnostic | Jun 2026 |
