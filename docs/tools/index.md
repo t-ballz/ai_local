@@ -16,3 +16,5 @@
 | [Strands Agents + LeRobot](strands-lerobot.md) | AWS + HuggingFace sim-to-hardware framework; same agent code runs in MuJoCo and physical robots; supports ACT, Diffusion Policy, SmolVLA, π0 |
 | **Knowledge Synthesis** | |
 | [STORM](storm.md) | Stanford multi-perspective wiki generation; simulates expert Q&A from multiple angles before writing; +25% organization, +10% coverage vs RAG baselines |
+| **Dev Workflow** | |
+| [spec-kit](spec-kit.md) | GitHub's spec-first AI coding workflow; 6 commands (specify→clarify→plan→tasks→implement); MIT; works with Claude Code, Cursor, Copilot, 25+ agents |

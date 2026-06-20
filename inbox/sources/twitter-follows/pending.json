@@ -32,6 +32,7 @@
     "url": "https://x.com/askalphaxiv/status/2067302219393937813",
     "title": "Tweet by @askalphaxiv: Latent Thought Flow — GFlowNet distribution over reasoning paths",
     "snippet": "Latent Thought Flow moves reasoning into continuous latent space, learning a distribution over many paths via a continuous GFlowNet. Gives more probability to trajectories that are correct and cheap; stops early on easy problems, thinks longer on hard ones. Better accuracy with reduced reasoning length.",
-    "summary": "Latent Thought Flow is a research technique that models reasoning as a distribution over multiple latent paths using a continuous GFlowNet, rather than a single fixed trajectory. It assigns higher probability to correct and efficient paths, enabling adaptive computation per-problem. Achieved better accuracy with reduced reasoning length. Wiki-relevant research paper — arXiv ID not confirmed, save for follow-up."
+    "summary": "Latent Thought Flow is a research technique that models reasoning as a distribution over multiple latent paths using a continuous GFlowNet, rather than a single fixed trajectory. It assigns higher probability to correct and efficient paths, enabling adaptive computation per-problem. Achieved better accuracy with reduced reasoning length. Wiki-relevant research paper — arXiv ID not confirmed, save for follow-up.",
+    "notes": "arXiv:2606.16222 — added to wiki"
   }
 ]

@@ -104,6 +104,24 @@ nav:
     - ACE-Ego-0 (Human+Robot Data for VLA): research/ace-ego-0.md
     - EgoCS-400K (Gameplay Dataset for World Models): research/egocs-400k.md
     - Self-Evolving Visual Questioner: research/self-evolving-visual-questioner.md
+    - Moebius (Lightweight Image Inpainting): research/moebius-image-inpainting.md
+    - RATs (Playful Agentic Robot Learning): research/rats-playful-robot-learning.md
+    - Multi-LCB (Multilingual Coding Benchmark): research/multi-lcb-multilingual-coding.md
+    - S-Agent (Spatial Intelligence via Tool-Use): research/s-agent-spatial-intelligence.md
+    - DF3DV-1K (Distractor-Free NVS Benchmark): research/df3dv-1k-novel-view-synthesis.md
+    - FreeStyle (LoRA-Mined Style-Content Generation): research/freestyle-lora-style-content.md
+    - FlowBender (Self-Correcting Conditional Flows): research/flowbender-feedback-aware-flows.md
+    - ImageWAM (World Action Models via Image Editing): research/imagewam-world-action-models.md
+    - WRBench (World Model Persistent State): research/wrbench-world-model-persistent-state.md
+    - ENPIRE (Agentic Robot Policy Self-Improvement): research/enpire-robot-self-improvement.md
+    - FAPO (Autonomous Prompt Optimization): research/fapo-autonomous-prompt-optimization.md
+    - ContextRL (Contrastive Context-Aware RL): research/contextrl-context-aware-rl.md
+    - Thinking with Visual Grounding: research/thinking-visual-grounding.md
+    - LedgerAgent (Structured State for Agents): research/ledgeragent-structured-state.md
+    - HumanScale (Egocentric Video for Embodied Pretraining): research/humanscale-egocentric-pretraining.md
+    - Environment-Aware IR (Retriever-Adaptive Queries): research/environment-aware-ir.md
+    - Holo-World (Unified Video World Model): research/holo-world-video-model.md
+    - Latent Thought Flow (GFlowNet Reasoning): research/latent-thought-flow.md
   - Software Thoughts:
     - Overview: software-thoughts/index.md
     - Every System is a Log: software-thoughts/every-system-is-a-log.md
@@ -130,3 +148,5 @@ nav:
       - Strands Agents + LeRobot (Sim-to-Hardware): tools/strands-lerobot.md
     - Knowledge Synthesis:
       - STORM (Multi-Perspective Wiki Generation): tools/storm.md
+    - Dev Workflow:
+      - spec-kit (Specification-First AI Coding): tools/spec-kit.md
