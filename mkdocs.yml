@@ -122,6 +122,8 @@ nav:
     - Environment-Aware IR (Retriever-Adaptive Queries): research/environment-aware-ir.md
     - Holo-World (Unified Video World Model): research/holo-world-video-model.md
     - Latent Thought Flow (GFlowNet Reasoning): research/latent-thought-flow.md
+    - SePO (Self-Evolving Prompt Optimization): research/sepo-self-evolving-prompt.md
+    - LoopFormer (Elastic-Depth Looped Transformers): research/loopformer-elastic-depth.md
   - Software Thoughts:
     - Overview: software-thoughts/index.md
     - Every System is a Log: software-thoughts/every-system-is-a-log.md
