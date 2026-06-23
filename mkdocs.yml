@@ -129,6 +129,13 @@ nav:
     - Local PR Triage with Open-Weight Models: research/local-pr-triage.md
     - FID Lottery (Generative Model Evaluation): research/fid-lottery-evaluation.md
     - Moebius in the Browser (WebGPU Deployment): research/moebius-browser-webgpu.md
+    - UFP4 (FP4 LLM Pretraining Fix): research/ufp4-fp4-pretraining.md
+    - Taylor-Calibrate (Hybrid Attention Distillation): research/taylor-calibrate-hybrid-distillation.md
+    - ASR Duration-Aware Scheduling: research/asr-duration-scheduling.md
+    - PerceptionDLM (Multimodal Diffusion LM): research/perceptiondlm-multimodal-diffusion.md
+    - MCompassRAG (Topic-Guided Retrieval): research/mcompassrag-topic-retrieval.md
+    - SproutRAG (Attention Tree Search RAG): research/sproutrag-tree-search.md
+    - Reflective Masking for Diffusion LMs: research/reflective-masking-diffusion-lm.md
   - Software Thoughts:
     - Overview: software-thoughts/index.md
     - Every System is a Log: software-thoughts/every-system-is-a-log.md
