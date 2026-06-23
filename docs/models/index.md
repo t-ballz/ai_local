@@ -29,6 +29,7 @@ Overview of the major open-weight model families for local inference.
 | [Harness-1](harness.md) | Patrick Jiang | Apache 2.0 | 20B search agent; 73% evidence recall; matches frontier model search at 20B |
 | [FastContext](fastcontext.md) | Microsoft | MIT | 4B repo-exploration subagent for coding agents; −10–60% main-agent tokens, +5.5 SWE-bench |
 | [MolmoMotion](molmomotion.md) | Allen AI | Apache 2.0 | Language-guided 3D trajectory forecasting; 1.16M-video dataset; +20pp robot pick-and-place |
+| [PP-OCRv6](pp-ocrv6.md) | PaddlePaddle | Apache 2.0 | 50-language OCR; 1.5M–34.5M params; 86.2% detection / 83.2% recognition; PaddleOCR/PyTorch/ONNX backends |
 
 ## Quick size guide
 

@@ -14,6 +14,8 @@
 | [Priompt](priompt.md) | Cursor's open-source JSX prompt library; priority-based context management — low-priority content drops automatically when the token budget fills |
 | **Robotics** | |
 | [Strands Agents + LeRobot](strands-lerobot.md) | AWS + HuggingFace sim-to-hardware framework; same agent code runs in MuJoCo and physical robots; supports ACT, Diffusion Policy, SmolVLA, π0 |
+| **Agent Frameworks** | |
+| [CUGA](cuga.md) | IBM Research configurable agent harness; 24 working example apps; supports OpenAPI/MCP/LangChain tools; multi-agent delegation; #1 AppWorld + WebArena; air-gap/Sovereign Core option |
 | **Knowledge Synthesis** | |
 | [STORM](storm.md) | Stanford multi-perspective wiki generation; simulates expert Q&A from multiple angles before writing; +25% organization, +10% coverage vs RAG baselines |
 | **Dev Workflow** | |

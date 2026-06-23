@@ -61,6 +61,7 @@ nav:
       - Ideogram 4.0: models/ideogram.md
       - Harness-1 (Search Agent): models/harness.md
       - FastContext (Code Explorer): models/fastcontext.md
+      - PP-OCRv6 (Multilingual OCR): models/pp-ocrv6.md
   - Inference:
     - Overview: inference/index.md
     - Ollama: inference/ollama.md
@@ -124,6 +125,10 @@ nav:
     - Latent Thought Flow (GFlowNet Reasoning): research/latent-thought-flow.md
     - SePO (Self-Evolving Prompt Optimization): research/sepo-self-evolving-prompt.md
     - LoopFormer (Elastic-Depth Looped Transformers): research/loopformer-elastic-depth.md
+    - HF Hub Release CI (AI-Assisted Releases): research/hf-hub-release-ci.md
+    - Local PR Triage with Open-Weight Models: research/local-pr-triage.md
+    - FID Lottery (Generative Model Evaluation): research/fid-lottery-evaluation.md
+    - Moebius in the Browser (WebGPU Deployment): research/moebius-browser-webgpu.md
   - Software Thoughts:
     - Overview: software-thoughts/index.md
     - Every System is a Log: software-thoughts/every-system-is-a-log.md
@@ -148,6 +153,8 @@ nav:
       - Priompt (Priority-Based Prompts): tools/priompt.md
     - Robotics:
       - Strands Agents + LeRobot (Sim-to-Hardware): tools/strands-lerobot.md
+    - Agent Frameworks:
+      - CUGA (Configurable Universal Generative Agent): tools/cuga.md
     - Knowledge Synthesis:
       - STORM (Multi-Perspective Wiki Generation): tools/storm.md
     - Dev Workflow:
