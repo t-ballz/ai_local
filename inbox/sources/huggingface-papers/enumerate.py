@@ -3,7 +3,12 @@
 
 last_seen.txt holds an ISO date. We walk the dated papers pages from the day
 after last_seen up to today, extract paper entries, and emit them as a JSON
-array. On success (and unless --dry-run) last_seen is advanced to today.
+array.
+
+If the number of new items exceeds MAX_ITEMS, we emit the first MAX_ITEMS,
+save a skip count to offset.txt, and do NOT advance last_seen. The next run
+re-fetches the same date range, skips the already-emitted items, and shows
+the next batch. last_seen only advances once the backlog is fully consumed.
 
 stdout contract: JSON array of {id, title, url, snippet}.
 """
@@ -20,6 +25,7 @@ from lib import http  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 LAST_SEEN = HERE / "last_seen.txt"
+OFFSET_FILE = HERE / "offset.txt"
 BASE = "https://huggingface.co"
 MAX_ITEMS = 20
 
@@ -27,6 +33,15 @@ MAX_ITEMS = 20
 def read_last_seen() -> datetime.date:
     raw = LAST_SEEN.read_text().strip()
     return datetime.date.fromisoformat(raw)
+
+
+def read_offset() -> int:
+    if OFFSET_FILE.exists():
+        try:
+            return int(OFFSET_FILE.read_text().strip())
+        except ValueError:
+            return 0
+    return 0
 
 
 def daterange(start: datetime.date, end: datetime.date):
@@ -74,9 +89,10 @@ def parse_papers(html: str) -> list[dict]:
 def main() -> int:
     dry_run = "--dry-run" in sys.argv[1:]
     last = read_last_seen()
+    offset = read_offset()
     today = datetime.date.today()
 
-    items: list[dict] = []
+    all_items: list[dict] = []
     seen_ids: set[str] = set()
     for day in daterange(last, today):
         url = f"{BASE}/papers/date/{day.isoformat()}"
@@ -87,23 +103,36 @@ def main() -> int:
         for it in parse_papers(resp.text):
             if it["id"] not in seen_ids:
                 seen_ids.add(it["id"])
-                items.append(it)
+                all_items.append(it)
 
-    if len(items) > MAX_ITEMS:
-        skipped = len(items) - MAX_ITEMS
-        items = items[:MAX_ITEMS]
+    # Skip items already shown in previous capped runs.
+    remaining = all_items[offset:]
+    total_remaining = len(remaining)
+
+    if total_remaining > MAX_ITEMS:
+        skipped = total_remaining - MAX_ITEMS
+        items = remaining[:MAX_ITEMS]
         print(
-            f"CAP_WARNING: showing {MAX_ITEMS} of {MAX_ITEMS + skipped} new items "
-            f"({skipped} more not shown — increase MAX_ITEMS or run again to advance pointer)",
+            f"CAP_WARNING: showing {MAX_ITEMS} of {total_remaining} new items "
+            f"({skipped} more — run again to continue)",
             file=sys.stderr,
         )
+    else:
+        items = remaining
 
     # Print first so a crash mid-write can't advance the pointer.
     sys.stdout.write(json.dumps(items) + "\n")
     sys.stdout.flush()
 
     if not dry_run:
-        LAST_SEEN.write_text(today.isoformat() + "\n")
+        if total_remaining > MAX_ITEMS:
+            # Backlog remains: save new offset, keep last_seen unchanged.
+            OFFSET_FILE.write_text(str(offset + MAX_ITEMS) + "\n")
+        else:
+            # Backlog cleared: advance last_seen, remove offset file.
+            LAST_SEEN.write_text(today.isoformat() + "\n")
+            if OFFSET_FILE.exists():
+                OFFSET_FILE.unlink()
 
     return 0
 
