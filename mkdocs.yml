@@ -154,6 +154,21 @@ nav:
     - EvoEmbedding (Evolvable Long-Context Embeddings): research/evoembedding-long-context-retrieval.md
     - BioMatrix (Biological Foundation Model): research/biomatrix-biological-foundation-model.md
     - Confident Layer Decoding (Alignment Tax Fix): research/confident-layer-decoding-alignment-tax.md
+    - SkillHarness (Safe Computer-Use Skills): research/skillharness-safe-computer-use.md
+    - HydraHead (Head-Level Hybrid Attention): research/hydrahead-hybrid-attention.md
+    - TAPO (Micro-Reflective Self-Distillation): research/tapo-micro-reflective-self-distillation.md
+    - SelfCompact (Autonomous Context Compression): research/selfcompact-agent-context-compression.md
+    - PhoneBuddy (Agentic Phone Use): research/phonebuddy-agentic-phone-use.md
+    - Foresight (Robot Failure Detection): research/foresight-robot-failure-detection.md
+    - Tmax (Terminal Agent Recipe): research/tmax-terminal-agent-recipe.md
+    - Notes2Skills (Certainty-Aware Agent Skills): research/notes2skills-certainty-aware-agent.md
+    - FlowBP (Reward Backprop for Flow Matching): research/flowbp-reward-backpropagation-flow-matching.md
+    - VESFlow (Safe Few-Step Generation): research/vesflow-safe-few-step-generation.md
+    - PoLAR (Latent Actions for Robot Policy): research/polar-latent-actions-robot-policy.md
+    - Connect the Dots (Long-Lifecycle Agents): research/connect-dots-long-lifecycle-agents.md
+    - Tapered Language Models: research/tapered-language-models.md
+    - Tiered Language Models (Capability Separation): research/tiered-language-models-capability-separation.md
+    - DR-MV3D (Dense Reward 3D Reasoning): research/dense-reward-multiview-3d-reasoning.md
   - Software Thoughts:
     - Overview: software-thoughts/index.md
     - Every System is a Log: software-thoughts/every-system-is-a-log.md
