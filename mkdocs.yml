@@ -136,6 +136,24 @@ nav:
     - MCompassRAG (Topic-Guided Retrieval): research/mcompassrag-topic-retrieval.md
     - SproutRAG (Attention Tree Search RAG): research/sproutrag-tree-search.md
     - Reflective Masking for Diffusion LMs: research/reflective-masking-diffusion-lm.md
+    - Hybrid Token Prediction (AllenAI Analysis): research/hybrid-token-prediction-analysis.md
+    - NeMo AutoModel (MoE Fine-Tuning): research/nemo-automodel-moe-finetuning.md
+    - BrainG3N (3D Brain MRI Generation): research/braing3n-3d-mri-generation.md
+    - WorldLines (Stateful Embodied Agents): research/worldlines-stateful-embodied-agents.md
+    - ICL Example Distillation (99% Token Reduction): research/icl-example-distillation-instructions.md
+    - StylisticBias (Visual Bias in MLLMs): research/stylisticbias-mllm-visual-cues.md
+    - Narrative Content in Pretraining Data: research/narrative-content-pretraining-data.md
+    - GeneralVLA-2 (Geometry-Aware Robot Planning): research/generalvla-2-geometry-memory.md
+    - OpenRath (Session-Centered Agent State): research/openrath-session-runtime-state.md
+    - DataClaw0 (Agentic Multimodal Data Curation): research/dataclaw0-multimodal-data-agent.md
+    - Grouped Query Experts (MoE on GQA Attention): research/grouped-query-experts-moe-attention.md
+    - World Action Models (Survey): research/world-action-models-survey.md
+    - KaLM-Reranker-V1 (Fast Document Reranking): research/kalm-reranker-v1.md
+    - CLI-Universe (Terminal Agent Synthesis): research/cli-universe-terminal-agents.md
+    - Unlimited OCR Works (R-SWA Long-Doc OCR): research/unlimited-ocr-reference-swa.md
+    - EvoEmbedding (Evolvable Long-Context Embeddings): research/evoembedding-long-context-retrieval.md
+    - BioMatrix (Biological Foundation Model): research/biomatrix-biological-foundation-model.md
+    - Confident Layer Decoding (Alignment Tax Fix): research/confident-layer-decoding-alignment-tax.md
   - Software Thoughts:
     - Overview: software-thoughts/index.md
     - Every System is a Log: software-thoughts/every-system-is-a-log.md
