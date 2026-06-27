@@ -88,6 +88,7 @@ def main() -> int:
     today = datetime.date.today().isoformat()
     sections: list[str] = []
     item_counter = 0
+    records: list[dict] = []  # structured sidecar for KB stage
 
     source_dirs = sorted(p for p in SOURCES_DIR.glob("*") if p.is_dir())
 
@@ -128,6 +129,14 @@ def main() -> int:
         for item in items:
             item_counter += 1
             section_lines.append(format_item(item_counter, item))
+            records.append({
+                "n": item_counter,
+                "source": name,
+                "id": item.get("id", ""),
+                "title": item.get("title") or "(untitled)",
+                "url": item.get("url", ""),
+                "snippet": item.get("snippet") or item.get("_pending_summary") or "",
+            })
 
         sections.append("\n".join(section_lines))
 
@@ -140,6 +149,9 @@ def main() -> int:
     DIGESTS_DIR.mkdir(parents=True, exist_ok=True)
     out_path = DIGESTS_DIR / f"{today}.md"
     out_path.write_text(digest)
+
+    json_path = DIGESTS_DIR / f"{today}.json"
+    json_path.write_text(json.dumps(records, indent=2) + "\n")
 
     print(digest)
     print(f"\n(written to {out_path})", file=sys.stderr)
